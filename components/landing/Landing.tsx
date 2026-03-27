@@ -1,15 +1,16 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { Navbar } from "./Navbar";
 import { Hero } from "./Hero";
-import { Bridge } from "./Bridge";
-import { TrustStrip } from "./TrustStrip";
-import { Portfolio } from "./Portfolio";
-import { Services } from "./Services";
-import { Team } from "./Team";
-import { Contact } from "./Contact";
-import { Footer } from "./Footer";
 import { StickyCta } from "./StickyCta";
+
+const Bridge = dynamic(() => import("./Bridge").then((m) => ({ default: m.Bridge })));
+const TrustStrip = dynamic(() => import("./TrustStrip").then((m) => ({ default: m.TrustStrip })));
+const Portfolio = dynamic(() => import("./Portfolio").then((m) => ({ default: m.Portfolio })));
+const Services = dynamic(() => import("./Services").then((m) => ({ default: m.Services })));
+const Team = dynamic(() => import("./Team").then((m) => ({ default: m.Team })));
+const Contact = dynamic(() => import("./Contact").then((m) => ({ default: m.Contact })));
 
 export function Landing() {
   return (
@@ -32,7 +33,6 @@ export function Landing() {
         <Contact />
       </main>
       <StickyCta />
-      <Footer />
     </>
   );
 }

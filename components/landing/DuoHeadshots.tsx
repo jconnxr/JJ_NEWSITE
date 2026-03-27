@@ -66,7 +66,8 @@ export function DuoHeadshots({ variant, className = "", priority }: Props) {
               height={550}
               className="aspect-[4/5] w-full object-cover object-top"
               sizes="(max-width: 640px) 200px, 220px"
-              priority={priority}
+              loading="lazy"
+              priority={false}
             />
           </div>
           <figcaption className="mt-3 text-xs font-medium uppercase tracking-[0.12em] text-[var(--color-muted)]">
