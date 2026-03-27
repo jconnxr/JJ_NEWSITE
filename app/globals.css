@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #f7f5f2;
+  --color-surface-alt: #eef1f6;
+  --color-ink: #1a2332;
+  --color-ink-deep: #152a45;
+  --color-muted: #4a5568;
+  --color-navy: #1e3a5f;
+  --color-navy-deep: #152a45;
+  --color-accent: #2c5282;
+  --color-border: #d9dee6;
+  --font-family-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-family-serif: var(--font-source-serif), ui-serif, Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* Anchor jumps clear the fixed header + notch */
+  scroll-padding-top: calc(4.5rem + env(safe-area-inset-top, 0px));
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 5rem;
+  }
+}
+
+body {
+  font-family: var(--font-family-sans);
+  background: var(--color-cream);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Faster taps, no double-tap zoom delay on controls */
+@layer base {
+  a,
+  button,
+  [type="button"],
+  [type="submit"],
+  [role="button"] {
+    touch-action: manipulation;
+  }
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-accent) 28%, transparent);
+}
