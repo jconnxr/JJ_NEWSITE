@@ -36,12 +36,12 @@ export const metadata: Metadata = {
 
 export default function WhyOnlinePage() {
   return (
-    <div className="relative min-h-dvh bg-[var(--color-cream)] text-[var(--color-ink)]">
+    <div className="relative min-h-dvh min-w-0 max-w-[100vw] overflow-x-clip bg-[var(--color-cream)] text-[var(--color-ink)]">
       <SiteGridBackdrop />
       <Navbar />
       <main
         id="main"
-        className="relative z-[1] pb-20 pt-[calc(7rem+env(safe-area-inset-top,0px))] sm:pb-24"
+        className="relative z-[1] min-w-0 pb-20 pt-[calc(7rem+env(safe-area-inset-top,0px))] sm:pb-24"
       >
         <section className="relative overflow-hidden border-b border-[var(--color-border)]/80 bg-[var(--color-surface-alt)]/40">
           <SectionFlowAccent phase={0} side="right" />

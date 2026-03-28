@@ -12,12 +12,12 @@ export function Bridge() {
     >
       <div className="pointer-events-none absolute inset-0">
         <motion.div
-          className="absolute -left-1/3 top-1/2 h-[min(50vh,380px)] w-[min(85vw,420px)] -translate-y-1/2 rounded-full bg-[radial-gradient(circle_at_center,color-mix(in_srgb,var(--color-navy)_22%,transparent)_0%,transparent_70%)] blur-3xl"
+          className="absolute -left-1/3 top-1/2 h-[min(50vh,380px)] w-[min(85vw,420px)] -translate-y-1/2 rounded-full bg-[radial-gradient(circle_at_center,color-mix(in_srgb,var(--color-navy)_22%,transparent)_0%,transparent_70%)] blur-2xl md:blur-3xl"
           animate={{ opacity: [0.25, 0.45, 0.25] }}
           transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute -right-1/4 bottom-0 h-[min(40vh,320px)] w-[min(70vw,360px)] rounded-full bg-[radial-gradient(circle_at_center,color-mix(in_srgb,var(--color-accent)_12%,transparent)_0%,transparent_68%)] blur-3xl"
+          className="absolute -right-1/4 bottom-0 h-[min(40vh,320px)] w-[min(70vw,360px)] rounded-full bg-[radial-gradient(circle_at_center,color-mix(in_srgb,var(--color-accent)_12%,transparent)_0%,transparent_68%)] blur-2xl md:blur-3xl"
           animate={{ opacity: [0.2, 0.38, 0.2] }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
         />

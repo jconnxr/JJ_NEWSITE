@@ -10,18 +10,25 @@ export function ScrollProgress() {
   useEffect(() => {
     if (reduceMotion) return;
 
-    const update = () => {
+    let raf = 0;
+    const apply = () => {
+      raf = 0;
       const el = document.documentElement;
       const max = el.scrollHeight - el.clientHeight;
       setProgress(max > 0 ? Math.min(1, el.scrollTop / max) : 0);
     };
 
-    update();
-    window.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update, { passive: true });
+    const onScroll = () => {
+      if (raf === 0) raf = requestAnimationFrame(apply);
+    };
+
+    apply();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", apply, { passive: true });
     return () => {
-      window.removeEventListener("scroll", update);
-      window.removeEventListener("resize", update);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", apply);
+      if (raf) cancelAnimationFrame(raf);
     };
   }, [reduceMotion]);
 

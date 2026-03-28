@@ -4,9 +4,12 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { PrimaryCtaLink } from "@/components/ui/primary-cta";
 import { BOOK_CALL_PATH, PHONE_DISPLAY, PHONE_TEL, RESPONSE_TIME, SERVICE_AREA } from "@/lib/constants";
+import { useNarrowViewport } from "@/lib/use-narrow-viewport";
 import { HeroTechBackdrop } from "./HeroTechBackdrop";
 
 export function Hero() {
+  const narrow = useNarrowViewport();
+
   return (
     <section
       className="relative overflow-hidden pt-[calc(7rem+env(safe-area-inset-top,0px))] pb-10 sm:pt-[8.5rem] sm:pb-14"
@@ -14,14 +17,22 @@ export function Hero() {
     >
       <div className="pointer-events-none absolute inset-0 z-0">
         <motion.div
-          className="absolute -left-1/4 top-0 h-[min(70vh,520px)] w-[min(90vw,520px)] rounded-full bg-[radial-gradient(circle_at_center,rgba(100,150,200,0.14)_0%,transparent_68%)] blur-3xl"
-          animate={{ scale: [1, 1.08, 1], opacity: [0.32, 0.52, 0.32] }}
-          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -left-1/4 top-0 h-[min(70vh,520px)] w-[min(90vw,520px)] rounded-full bg-[radial-gradient(circle_at_center,rgba(100,150,200,0.14)_0%,transparent_68%)] blur-2xl md:blur-3xl"
+          animate={
+            narrow
+              ? { scale: 1, opacity: [0.3, 0.42, 0.3] }
+              : { scale: [1, 1.08, 1], opacity: [0.32, 0.52, 0.32] }
+          }
+          transition={{ duration: narrow ? 10 : 14, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute -right-1/4 bottom-0 h-[min(60vh,440px)] w-[min(85vw,480px)] rounded-full bg-[radial-gradient(circle_at_center,rgba(196,168,106,0.08)_0%,transparent_65%)] blur-3xl"
-          animate={{ scale: [1.05, 1, 1.05], opacity: [0.22, 0.38, 0.22] }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -right-1/4 bottom-0 h-[min(60vh,440px)] w-[min(85vw,480px)] rounded-full bg-[radial-gradient(circle_at_center,rgba(196,168,106,0.08)_0%,transparent_65%)] blur-2xl md:blur-3xl"
+          animate={
+            narrow
+              ? { scale: 1, opacity: [0.2, 0.32, 0.2] }
+              : { scale: [1.05, 1, 1.05], opacity: [0.22, 0.38, 0.22] }
+          }
+          transition={{ duration: narrow ? 12 : 18, repeat: Infinity, ease: "easeInOut" }}
         />
         <HeroTechBackdrop />
         <div
@@ -34,7 +45,7 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative z-[1] mx-auto max-w-3xl px-4 text-center sm:px-6">
+      <div className="relative z-[1] mx-auto min-w-0 max-w-3xl px-4 text-center sm:px-6">
         <motion.p
           className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-gold)]"
           initial={{ opacity: 0, y: 16 }}
@@ -45,7 +56,7 @@ export function Hero() {
         </motion.p>
         <motion.h1
           id="hero-heading"
-          className="mx-auto font-serif text-4xl font-semibold leading-[1.12] tracking-tight text-[var(--color-ink-deep)] sm:text-5xl sm:tracking-tight lg:text-[3.25rem] lg:-tracking-[0.02em]"
+          className="mx-auto min-w-0 max-w-full text-balance break-words font-serif text-[clamp(1.625rem,5.2vw,2.25rem)] font-semibold leading-[1.12] tracking-tight text-[var(--color-ink-deep)] sm:text-5xl sm:tracking-tight lg:text-[3.25rem] lg:-tracking-[0.02em]"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
@@ -53,7 +64,7 @@ export function Hero() {
           Websites, leads, and systems—without the jargon
         </motion.h1>
         <motion.p
-          className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[var(--color-muted)]"
+          className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[var(--color-muted)] sm:text-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}

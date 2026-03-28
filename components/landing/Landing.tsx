@@ -29,7 +29,7 @@ export function Landing() {
       <Navbar />
       <ScrollProgress />
       <SiteGridBackdrop />
-      <main id="main" className="relative z-[1] pb-16 md:pb-0">
+      <main id="main" className="relative z-[1] min-w-0 max-w-[100vw] overflow-x-clip pb-16 md:pb-0">
         <Hero />
         <Bridge />
         <WhyOnlineTeaser />

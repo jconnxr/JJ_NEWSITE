@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { useNarrowViewport } from "@/lib/use-narrow-viewport";
 
 type Variant = "surface" | "deep";
 
@@ -22,6 +23,8 @@ export function SectionFlowAccent({
   variant = "surface",
 }: SectionFlowAccentProps) {
   const reduceMotion = useReducedMotion();
+  const narrow = useNarrowViewport();
+  const chill = reduceMotion || narrow;
   const p = phase % 6;
   const durA = 36 + p * 3;
   const durB = 30 + (p % 3) * 4;
@@ -49,10 +52,10 @@ export function SectionFlowAccent({
       {blobs ? (
         <>
           <motion.div
-            className="absolute -left-[20%] top-[8%] h-[min(42vh,320px)] w-[min(70vw,380px)] rounded-full blur-3xl"
+            className="absolute -left-[20%] top-[8%] h-[min(42vh,320px)] w-[min(70vw,380px)] rounded-full blur-2xl md:blur-3xl"
             style={{ background: blobA }}
             animate={
-              reduceMotion
+              chill
                 ? { x: 0, y: 0, opacity: 0.75 }
                 : {
                     x: [0, 18, -10, 0],
@@ -61,16 +64,14 @@ export function SectionFlowAccent({
                   }
             }
             transition={
-              reduceMotion
-                ? { duration: 0 }
-                : { duration: durA, repeat: Infinity, ease: "easeInOut", delay }
+              chill ? { duration: 0 } : { duration: durA, repeat: Infinity, ease: "easeInOut", delay }
             }
           />
           <motion.div
-            className="absolute -bottom-[12%] -right-[18%] h-[min(36vh,280px)] w-[min(62vw,340px)] rounded-full blur-3xl"
+            className="absolute -bottom-[12%] -right-[18%] h-[min(36vh,280px)] w-[min(62vw,340px)] rounded-full blur-2xl md:blur-3xl"
             style={{ background: blobB }}
             animate={
-              reduceMotion
+              chill
                 ? { x: 0, y: 0, opacity: 0.55 }
                 : {
                     x: [0, -16, 12, 0],
@@ -79,9 +80,7 @@ export function SectionFlowAccent({
                   }
             }
             transition={
-              reduceMotion
-                ? { duration: 0 }
-                : { duration: durB, repeat: Infinity, ease: "easeInOut", delay: delay + 0.6 }
+              chill ? { duration: 0 } : { duration: durB, repeat: Infinity, ease: "easeInOut", delay: delay + 0.6 }
             }
           />
         </>
@@ -101,7 +100,7 @@ export function SectionFlowAccent({
           strokeLinecap="round"
           vectorEffect="non-scaling-stroke"
         />
-        {!reduceMotion ? (
+        {!chill ? (
           <motion.path
             d="M 118 132 L 52 268"
             fill="none"
@@ -156,16 +155,16 @@ export function SectionFlowAccent({
             key={`${n.cx}-${n.cy}`}
             cx={n.cx}
             cy={n.cy}
-            r={reduceMotion ? 2.2 : 2.5}
+            r={chill ? 2.2 : 2.5}
             fill={nodeFill}
-            fillOpacity={reduceMotion ? 0.4 : 0.5}
+            fillOpacity={chill ? 0.4 : 0.5}
             animate={
-              reduceMotion
+              chill
                 ? { fillOpacity: 0.4 }
                 : { fillOpacity: [0.25, 0.55, 0.28, 0.25] }
             }
             transition={
-              reduceMotion
+              chill
                 ? { duration: 0 }
                 : {
                     duration: 3.4 + (i % 3) * 0.4,

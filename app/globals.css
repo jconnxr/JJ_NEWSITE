@@ -21,6 +21,7 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  overflow-x: clip;
   /* Anchor jumps clear the fixed header + notch */
   scroll-padding-top: calc(5.25rem + env(safe-area-inset-top, 0px));
 }

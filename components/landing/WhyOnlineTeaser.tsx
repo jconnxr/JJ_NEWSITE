@@ -9,7 +9,7 @@ export function WhyOnlineTeaser() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
           <div className="flex flex-col gap-6 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)]/50 p-6 shadow-[0_4px_24px_rgba(0,0,0,0.12)] sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:p-8">
-            <div className="min-w-0 text-center sm:text-left">
+            <div className="min-w-0 max-w-full text-center sm:text-left">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-gold)]">Why online</p>
               <h2
                 id="why-online-teaser-heading"

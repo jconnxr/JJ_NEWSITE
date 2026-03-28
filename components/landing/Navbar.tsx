@@ -50,8 +50,8 @@ export function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b pt-[env(safe-area-inset-top,0px)] transition-[background,box-shadow,border-color] duration-300 ${
         scrolled || menuOpen
-          ? "border-[var(--color-border)]/90 bg-[var(--color-cream)]/[0.94] shadow-[0_8px_30px_rgba(0,0,0,0.45)] backdrop-blur-xl"
-          : "border-transparent bg-[var(--color-cream)]/75 backdrop-blur-md"
+          ? "border-[var(--color-border)]/90 bg-[var(--color-cream)]/[0.94] shadow-[0_8px_30px_rgba(0,0,0,0.45)] backdrop-blur-md md:backdrop-blur-xl"
+          : "border-transparent bg-[var(--color-cream)]/80 backdrop-blur-sm md:bg-[var(--color-cream)]/75 md:backdrop-blur-md"
       }`}
     >
       <div className="mx-auto grid w-full max-w-6xl grid-cols-[auto_1fr_auto] items-center gap-x-3 px-4 py-3.5 sm:gap-x-4 sm:px-6 sm:py-4 md:grid-cols-[1fr_auto_1fr]">

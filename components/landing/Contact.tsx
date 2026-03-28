@@ -17,7 +17,7 @@ export function Contact() {
     >
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[var(--color-navy-deep)] via-[var(--color-navy)] to-[var(--color-cream)]" />
       <motion.div
-        className="pointer-events-none absolute -right-1/4 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.12)_0%,transparent_65%)] blur-3xl"
+        className="pointer-events-none absolute -right-1/4 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.12)_0%,transparent_65%)] blur-2xl md:blur-3xl"
         animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.7, 0.4] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
