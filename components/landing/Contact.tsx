@@ -2,15 +2,17 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { PrimaryCtaLink } from "@/components/ui/primary-cta";
 import { BOOK_CALL_PATH, CONTACT_MAILTO } from "@/lib/constants";
 import { Reveal } from "@/components/motion/Reveal";
 import { ProductInquiryForm } from "./ProductInquiryForm";
+import { SectionFlowAccent } from "./SectionFlowAccent";
 
 export function Contact() {
   return (
     <section
       id="contact"
-      className="scroll-mt-24 relative overflow-hidden py-20 sm:py-28"
+      className="scroll-mt-24 relative overflow-hidden py-24 sm:py-32"
       aria-labelledby="contact-heading"
     >
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[var(--color-navy-deep)] via-[var(--color-navy)] to-[var(--color-cream)]" />
@@ -19,11 +21,15 @@ export function Contact() {
         animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.7, 0.4] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
+      <SectionFlowAccent phase={6} side="left" blobs={false} variant="deep" />
 
       <div className="relative z-[1] mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center">
           <Reveal>
-            <h2 id="contact-heading" className="font-serif text-3xl font-semibold text-white sm:text-4xl">
+            <h2
+              id="contact-heading"
+              className="font-serif text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:tracking-tight"
+            >
               Two ways to reach us
             </h2>
           </Reveal>
@@ -62,14 +68,11 @@ export function Contact() {
                 </li>
               </ul>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
-                  <Link
-                    href={BOOK_CALL_PATH}
-                    className="inline-flex min-h-[48px] w-full items-center justify-center rounded-xl bg-[var(--color-navy)] px-8 text-base font-semibold text-white shadow-lg shadow-[var(--color-navy)]/25 transition hover:bg-[var(--color-navy-deep)] sm:w-auto sm:text-sm"
-                  >
+                <div className="w-full sm:w-auto">
+                  <PrimaryCtaLink href={BOOK_CALL_PATH} className="w-full px-8 text-base sm:w-auto sm:text-sm">
                     Schedule a call
-                  </Link>
-                </motion.div>
+                  </PrimaryCtaLink>
+                </div>
                 <Link
                   href={CONTACT_MAILTO}
                   className="flex min-h-11 items-center justify-center text-center text-base font-medium text-[var(--color-accent)] underline-offset-2 hover:underline sm:justify-start sm:text-left sm:text-sm"

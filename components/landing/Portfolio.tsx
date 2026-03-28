@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { projects } from "@/lib/portfolio-data";
 import { Reveal } from "@/components/motion/Reveal";
+import { SectionFlowAccent } from "./SectionFlowAccent";
 
 const categoryBadge: Record<string, string> = {
   website: "bg-[var(--color-accent)]/12 text-[var(--color-accent)] ring-1 ring-[var(--color-accent)]/20",
@@ -13,8 +14,12 @@ const categoryBadge: Record<string, string> = {
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="scroll-mt-24 border-t border-[var(--color-border)] bg-paper py-16 sm:py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <section
+      id="portfolio"
+      className="relative overflow-hidden scroll-mt-24 border-t border-[var(--color-border)] bg-paper py-20 sm:py-24"
+    >
+      <SectionFlowAccent phase={3} side="left" />
+      <div className="relative z-[1] mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
           <p
             className="mb-4 inline-block rounded-full border border-[var(--color-gold)]/35 bg-[var(--color-gold)]/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-[var(--color-gold)]"
@@ -23,7 +28,7 @@ export function Portfolio() {
             Sample projects — not real businesses
           </p>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-accent)]">Selected work</p>
-          <h2 className="mt-2 font-serif text-3xl font-semibold tracking-tight text-[var(--color-ink-deep)] sm:text-4xl">
+          <h2 className="mt-2 font-serif text-3xl font-semibold tracking-tight text-[var(--color-ink-deep)] sm:text-4xl lg:tracking-tight">
             See what we can build
           </h2>
         </Reveal>
@@ -34,20 +39,20 @@ export function Portfolio() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+        <div className="mt-14 grid gap-8 sm:grid-cols-2">
           {projects.map((p, i) => (
             <motion.div
               key={p.slug}
-              initial={{ opacity: 0, y: 28 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-6%" }}
-              transition={{ duration: 0.5, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: true, margin: "-8% 0px" }}
+              transition={{ duration: 0.55, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
             >
               <Link
                 href={`/work/${p.slug}`}
-                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)]/50 shadow-[0_4px_24px_rgba(0,0,0,0.35)] transition hover:border-[var(--color-accent)]/30 hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)]"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)]/50 shadow-[0_4px_24px_rgba(0,0,0,0.35)] transition duration-300 hover:border-[var(--color-accent)]/35 hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)]"
               >
-                <div className="flex flex-1 flex-col p-6 sm:p-7">
+                <div className="flex flex-1 flex-col p-6 transition-transform duration-300 ease-out group-hover:scale-[1.02] sm:p-7">
                   <div className="flex flex-wrap items-center gap-2">
                     <span
                       className={`rounded-full px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide ${categoryBadge[p.category] ?? categoryBadge.website}`}

@@ -18,5 +18,16 @@ export const PHONE_DISPLAY = JOHN_PHONE_DISPLAY;
 /** Shown near hero / footer — edit to match how you serve clients */
 export const SERVICE_AREA = "Oklahoma City metro & statewide";
 
+/** Named areas for footer / local SEO — edit to match where you actually work */
+export const SERVICE_AREA_CITIES = [
+  "Oklahoma City",
+  "Edmond",
+  "Norman",
+  "Moore",
+  "Midwest City",
+  "Tulsa metro",
+  "Statewide",
+] as const;
+
 /** Sets expectations after form or call */
 export const RESPONSE_TIME = "We usually reply within one business day.";

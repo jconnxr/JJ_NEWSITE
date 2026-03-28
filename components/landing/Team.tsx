@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/motion/Reveal";
+import { SectionFlowAccent } from "./SectionFlowAccent";
 import { JACOB_PHONE_DISPLAY, JACOB_PHONE_TEL, JOHN_PHONE_DISPLAY, JOHN_PHONE_TEL } from "@/lib/constants";
 
 const people = [
@@ -48,14 +49,15 @@ export function Team() {
   return (
     <section
       id="team"
-      className="scroll-mt-24 border-t border-[var(--color-border)] bg-[var(--color-surface-alt)] py-20 sm:py-28"
+      className="relative overflow-hidden scroll-mt-24 border-t border-[var(--color-border)] bg-[var(--color-surface-alt)] py-24 sm:py-32"
       aria-labelledby="team-heading"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <SectionFlowAccent phase={5} side="left" />
+      <div className="relative z-[1] mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
           <h2
             id="team-heading"
-            className="font-serif text-3xl font-semibold tracking-tight text-[var(--color-ink-deep)] sm:text-4xl"
+            className="font-serif text-3xl font-semibold tracking-tight text-[var(--color-ink-deep)] sm:text-4xl lg:tracking-tight"
           >
             The people you’ll actually talk to
           </h2>
@@ -67,14 +69,30 @@ export function Team() {
           </p>
         </Reveal>
 
+        {process.env.NEXT_PUBLIC_TEAM_VIDEO_URL ? (
+          <Reveal delay={0.08}>
+            <div className="mt-12 overflow-hidden rounded-2xl border border-[var(--color-border)] bg-black/20 shadow-lg shadow-black/30">
+              <div className="aspect-video w-full">
+                <iframe
+                  src={process.env.NEXT_PUBLIC_TEAM_VIDEO_URL}
+                  title="Welcome from John and Jacob — J&J Management Solutions"
+                  className="h-full w-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </Reveal>
+        ) : null}
+
         <div className="mt-14 grid gap-8 md:grid-cols-2 md:gap-10">
           {people.map((person, i) => (
             <motion.article
               key={person.name}
-              initial={{ opacity: 0, y: 32 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-10%" }}
-              transition={{ duration: 0.55, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: true, margin: "-8% 0px" }}
+              transition={{ duration: 0.55, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
               className="group overflow-hidden rounded-3xl border border-[var(--color-border)] bg-paper shadow-xl shadow-black/40"
             >
               <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-surface-alt)]">

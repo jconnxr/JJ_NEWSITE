@@ -1,7 +1,10 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { PrimaryCtaButton } from "@/components/ui/primary-cta";
+import { formFieldClass } from "@/components/ui/form-field-classes";
+import { SubmitButtonContent } from "@/components/ui/SubmitButtonContent";
 
 function todayISODate(): string {
   const d = new Date();
@@ -21,6 +24,12 @@ export function BookCallForm() {
   const honeypotRef = useRef<HTMLInputElement>(null);
 
   const minDate = todayISODate();
+
+  useEffect(() => {
+    if (status !== "success") return;
+    const t = window.setTimeout(() => setStatus("idle"), 2800);
+    return () => window.clearTimeout(t);
+  }, [status]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -87,7 +96,7 @@ export function BookCallForm() {
           min={minDate}
           value={preferredDate}
           onChange={(e) => setPreferredDate(e.target.value)}
-          className="mt-1.5 min-h-[48px] w-full rounded-lg border border-[var(--color-border)] bg-paper px-3 py-2.5 text-base text-[var(--color-ink)] sm:text-sm"
+          className={formFieldClass}
         />
       </label>
 
@@ -98,7 +107,7 @@ export function BookCallForm() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           autoComplete="name"
-          className="mt-1.5 min-h-[48px] w-full rounded-lg border border-[var(--color-border)] bg-paper px-3 py-2.5 text-base text-[var(--color-ink)] sm:text-sm"
+          className={formFieldClass}
         />
       </label>
 
@@ -109,7 +118,7 @@ export function BookCallForm() {
           value={businessName}
           onChange={(e) => setBusinessName(e.target.value)}
           autoComplete="organization"
-          className="mt-1.5 min-h-[48px] w-full rounded-lg border border-[var(--color-border)] bg-paper px-3 py-2.5 text-base text-[var(--color-ink)] sm:text-sm"
+          className={formFieldClass}
         />
       </label>
 
@@ -122,7 +131,7 @@ export function BookCallForm() {
           onChange={(e) => setPhone(e.target.value)}
           autoComplete="tel"
           inputMode="tel"
-          className="mt-1.5 min-h-[48px] w-full rounded-lg border border-[var(--color-border)] bg-paper px-3 py-2.5 text-base text-[var(--color-ink)] sm:text-sm"
+          className={formFieldClass}
         />
       </label>
 
@@ -137,13 +146,13 @@ export function BookCallForm() {
         </p>
       )}
 
-      <button
+      <PrimaryCtaButton
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex min-h-[48px] w-full items-center justify-center rounded-xl bg-[var(--color-navy)] px-6 text-base font-semibold text-white shadow-md transition hover:bg-[var(--color-navy-deep)] disabled:opacity-60 sm:text-sm"
+        className={`w-full px-6 text-base sm:text-sm ${status === "success" ? "pointer-events-none opacity-100" : ""}`}
       >
-        {status === "loading" ? "Sending…" : "Submit request"}
-      </button>
+        <SubmitButtonContent status={status} idleLabel="Submit request" />
+      </PrimaryCtaButton>
 
       <p className="text-center text-sm text-[var(--color-muted)]">
         <Link href="/" className="font-medium text-[var(--color-accent)] hover:underline">

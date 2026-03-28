@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
+import { SectionFlowAccent } from "./SectionFlowAccent";
 
 const items = [
   {
@@ -20,9 +21,13 @@ const items = [
 
 export function TrustStrip() {
   return (
-    <section className="border-b border-[var(--color-border)] bg-paper py-16 sm:py-20" aria-label="How we work">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <Stagger className="grid gap-10 md:grid-cols-3 md:gap-8">
+    <section
+      className="relative overflow-hidden border-b border-[var(--color-border)] bg-paper py-20 sm:py-24"
+      aria-label="How we work"
+    >
+      <SectionFlowAccent phase={1} side="left" />
+      <div className="relative z-[1] mx-auto max-w-6xl px-4 sm:px-6">
+        <Stagger className="grid gap-12 md:grid-cols-3 md:gap-10">
           {items.map(({ title, body }) => (
             <StaggerItem key={title}>
               <motion.div

@@ -33,7 +33,11 @@ html {
 
 body {
   font-family: var(--font-family-sans);
-  background: var(--color-cream);
+  background-color: var(--color-cream);
+  background-image:
+    radial-gradient(ellipse 130% 90% at 50% -25%, color-mix(in srgb, var(--color-navy-deep) 42%, transparent), transparent 58%),
+    radial-gradient(ellipse 100% 70% at 100% 40%, color-mix(in srgb, var(--color-navy) 16%, transparent), transparent 52%),
+    radial-gradient(ellipse 80% 55% at 0% 85%, color-mix(in srgb, var(--color-accent) 10%, transparent), transparent 48%);
   color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
 }

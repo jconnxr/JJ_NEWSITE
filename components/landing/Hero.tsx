@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { PrimaryCtaLink } from "@/components/ui/primary-cta";
 import { BOOK_CALL_PATH, PHONE_DISPLAY, PHONE_TEL, RESPONSE_TIME, SERVICE_AREA } from "@/lib/constants";
-import { HeroGeometricBackdrop } from "./HeroGeometricBackdrop";
+import { HeroTechBackdrop } from "./HeroTechBackdrop";
 
 export function Hero() {
   return (
@@ -13,21 +14,21 @@ export function Hero() {
     >
       <div className="pointer-events-none absolute inset-0 z-0">
         <motion.div
-          className="absolute -left-1/4 top-0 h-[min(70vh,520px)] w-[min(90vw,520px)] rounded-full bg-[radial-gradient(circle_at_center,rgba(100,150,200,0.18)_0%,transparent_68%)] blur-3xl"
-          animate={{ scale: [1, 1.08, 1], opacity: [0.4, 0.62, 0.4] }}
+          className="absolute -left-1/4 top-0 h-[min(70vh,520px)] w-[min(90vw,520px)] rounded-full bg-[radial-gradient(circle_at_center,rgba(100,150,200,0.14)_0%,transparent_68%)] blur-3xl"
+          animate={{ scale: [1, 1.08, 1], opacity: [0.32, 0.52, 0.32] }}
           transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute -right-1/4 bottom-0 h-[min(60vh,440px)] w-[min(85vw,480px)] rounded-full bg-[radial-gradient(circle_at_center,rgba(196,168,106,0.1)_0%,transparent_65%)] blur-3xl"
-          animate={{ scale: [1.05, 1, 1.05], opacity: [0.28, 0.48, 0.28] }}
+          className="absolute -right-1/4 bottom-0 h-[min(60vh,440px)] w-[min(85vw,480px)] rounded-full bg-[radial-gradient(circle_at_center,rgba(196,168,106,0.08)_0%,transparent_65%)] blur-3xl"
+          animate={{ scale: [1.05, 1, 1.05], opacity: [0.22, 0.38, 0.22] }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
         />
-        <HeroGeometricBackdrop />
+        <HeroTechBackdrop />
         <div
-          className="absolute inset-0 opacity-[0.4]"
+          className="absolute inset-0 opacity-[0.32]"
           style={{
-            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px)`,
             backgroundSize: "48px 48px",
           }}
         />
@@ -44,7 +45,7 @@ export function Hero() {
         </motion.p>
         <motion.h1
           id="hero-heading"
-          className="mx-auto font-serif text-4xl font-semibold leading-[1.12] tracking-tight text-[var(--color-ink-deep)] sm:text-5xl lg:text-[3.25rem]"
+          className="mx-auto font-serif text-4xl font-semibold leading-[1.12] tracking-tight text-[var(--color-ink-deep)] sm:text-5xl sm:tracking-tight lg:text-[3.25rem] lg:-tracking-[0.02em]"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
@@ -66,12 +67,12 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.48 }}
         >
-          <Link
+          <PrimaryCtaLink
             href={BOOK_CALL_PATH}
-            className="inline-flex min-h-[48px] w-full items-center justify-center rounded-xl bg-[var(--color-navy)] px-7 text-base font-semibold text-white shadow-lg shadow-[var(--color-navy)]/20 transition hover:bg-[var(--color-navy-deep)] sm:w-auto sm:min-w-[200px] sm:text-sm"
+            className="w-full px-7 text-base sm:w-auto sm:min-w-[200px] sm:text-sm"
           >
             Book a conversation
-          </Link>
+          </PrimaryCtaLink>
           <Link
             href="#product-inquiry"
             className="inline-flex min-h-[48px] w-full items-center justify-center rounded-xl border border-[var(--color-border)] bg-paper/90 px-7 text-base font-semibold text-[var(--color-accent)] backdrop-blur-sm transition hover:border-[var(--color-accent)]/35 hover:bg-paper sm:w-auto sm:text-sm"

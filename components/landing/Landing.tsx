@@ -3,10 +3,14 @@
 import dynamic from "next/dynamic";
 import { Navbar } from "./Navbar";
 import { Hero } from "./Hero";
+import { ScrollProgress } from "./ScrollProgress";
+import { SiteGridBackdrop } from "./SiteGridBackdrop";
 import { StickyCta } from "./StickyCta";
 
 const Bridge = dynamic(() => import("./Bridge").then((m) => ({ default: m.Bridge })));
+const WhyOnlineTeaser = dynamic(() => import("./WhyOnlineTeaser").then((m) => ({ default: m.WhyOnlineTeaser })));
 const TrustStrip = dynamic(() => import("./TrustStrip").then((m) => ({ default: m.TrustStrip })));
+const Process = dynamic(() => import("./Process").then((m) => ({ default: m.Process })));
 const Portfolio = dynamic(() => import("./Portfolio").then((m) => ({ default: m.Portfolio })));
 const Services = dynamic(() => import("./Services").then((m) => ({ default: m.Services })));
 const Team = dynamic(() => import("./Team").then((m) => ({ default: m.Team })));
@@ -23,10 +27,14 @@ export function Landing() {
         Skip to main content
       </a>
       <Navbar />
-      <main id="main" className="pb-16 md:pb-0">
+      <ScrollProgress />
+      <SiteGridBackdrop />
+      <main id="main" className="relative z-[1] pb-16 md:pb-0">
         <Hero />
         <Bridge />
+        <WhyOnlineTeaser />
         <TrustStrip />
+        <Process />
         <Portfolio />
         <Services />
         <Team />

@@ -1,7 +1,10 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { PrimaryCtaButton } from "@/components/ui/primary-cta";
+import { formFieldClass, formTextareaClass } from "@/components/ui/form-field-classes";
+import { SubmitButtonContent } from "@/components/ui/SubmitButtonContent";
 import { focusOptions, type FocusOptionId } from "@/lib/product-focus-options";
 
 const defaultFocus: FocusOptionId = "website";
@@ -18,6 +21,12 @@ export function ProductInquiryForm() {
   const honeypotRef = useRef<HTMLInputElement>(null);
 
   const selected = focusOptions.find((o) => o.id === focus) ?? focusOptions[0];
+
+  useEffect(() => {
+    if (status !== "success") return;
+    const t = window.setTimeout(() => setStatus("idle"), 2800);
+    return () => window.clearTimeout(t);
+  }, [status]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -133,7 +142,7 @@ export function ProductInquiryForm() {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="mt-1.5 min-h-[48px] w-full rounded-lg border border-[var(--color-border)] bg-paper px-3 py-2.5 text-base text-[var(--color-ink)] sm:text-sm"
+            className={formFieldClass}
             autoComplete="name"
             inputMode="text"
           />
@@ -145,7 +154,7 @@ export function ProductInquiryForm() {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="mt-1.5 min-h-[48px] w-full rounded-lg border border-[var(--color-border)] bg-paper px-3 py-2.5 text-base text-[var(--color-ink)] sm:text-sm"
+            className={formFieldClass}
             autoComplete="email"
             inputMode="email"
           />
@@ -156,7 +165,7 @@ export function ProductInquiryForm() {
             type="tel"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="mt-1.5 min-h-[48px] w-full rounded-lg border border-[var(--color-border)] bg-paper px-3 py-2.5 text-base text-[var(--color-ink)] sm:text-sm"
+            className={formFieldClass}
             autoComplete="tel"
             inputMode="tel"
           />
@@ -167,7 +176,7 @@ export function ProductInquiryForm() {
             required
             value={businessName}
             onChange={(e) => setBusinessName(e.target.value)}
-            className="mt-1.5 min-h-[48px] w-full rounded-lg border border-[var(--color-border)] bg-paper px-3 py-2.5 text-base text-[var(--color-ink)] sm:text-sm"
+            className={formFieldClass}
             autoComplete="organization"
           />
         </label>
@@ -182,7 +191,7 @@ export function ProductInquiryForm() {
             value={goals}
             onChange={(e) => setGoals(e.target.value)}
             rows={3}
-            className="mt-1.5 min-h-[96px] w-full resize-y rounded-lg border border-[var(--color-border)] bg-paper px-3 py-3 text-base text-[var(--color-ink)] sm:text-sm"
+            className={formTextareaClass}
             placeholder="e.g. No website yet, or we’re not showing up for local searches…"
           />
         </label>
@@ -199,13 +208,13 @@ export function ProductInquiryForm() {
         </p>
       )}
 
-      <button
+      <PrimaryCtaButton
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex min-h-[48px] w-full items-center justify-center rounded-xl bg-[var(--color-navy)] px-6 text-base font-semibold text-white shadow-md transition hover:bg-[var(--color-navy-deep)] disabled:opacity-60 sm:w-auto sm:text-sm"
+        className={`w-full px-6 text-base sm:w-auto sm:text-sm ${status === "success" ? "pointer-events-none opacity-100" : ""}`}
       >
-        {status === "loading" ? "Sending…" : "Send my info"}
-      </button>
+        <SubmitButtonContent status={status} idleLabel="Send my info" />
+      </PrimaryCtaButton>
       <p className="text-[11px] text-[var(--color-muted)]">
         We use this to scope a fit and follow up—we don’t sell your information.
       </p>

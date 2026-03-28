@@ -6,10 +6,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "#services", label: "Services" },
-  { href: "#portfolio", label: "Work" },
-  { href: "#team", label: "Team" },
-  { href: "#contact", label: "Contact" },
+  { href: "/why-online", label: "Why online" },
+  { href: "/#services", label: "Services" },
+  { href: "/#portfolio", label: "Work" },
+  { href: "/#team", label: "Team" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function Navbar() {
@@ -43,7 +44,7 @@ export function Navbar() {
   }, []);
 
   const linkClass =
-    "flex min-h-12 items-center rounded-lg px-3 text-base font-medium text-[var(--color-ink)] transition-colors hover:bg-white/[0.06] hover:text-[var(--color-accent)] md:min-h-0 md:text-sm";
+    "flex min-h-12 items-center rounded-lg px-3 text-base font-medium text-[var(--color-ink)] transition-colors hover:bg-white/[0.06] hover:text-[var(--color-accent)] md:min-h-0 md:px-3 md:text-sm";
 
   return (
     <header
@@ -53,31 +54,35 @@ export function Navbar() {
           : "border-transparent bg-[var(--color-cream)]/75 backdrop-blur-md"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3.5 sm:px-6 sm:py-4">
-        <Link
-          href="/"
-          className="group flex min-w-0 flex-1 items-center gap-2.5 no-underline sm:flex-initial"
-          onClick={() => setMenuOpen(false)}
-        >
-          <span className="sr-only">J&amp;J Management Solutions — Home</span>
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ type: "spring", stiffness: 400, damping: 24 }}
-            className="shrink-0"
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-[auto_1fr_auto] items-center gap-x-3 px-4 py-3.5 sm:gap-x-4 sm:px-6 sm:py-4 md:grid-cols-[1fr_auto_1fr]">
+        <div className="flex min-w-0 justify-self-start">
+          <Link
+            href="/"
+            className="group flex shrink-0 items-center justify-start no-underline"
+            onClick={() => setMenuOpen(false)}
           >
-            <Image
-              src="/logo-wordmark.png"
-              alt=""
-              width={400}
-              height={110}
-              className="h-12 w-auto max-w-[min(300px,72vw)] object-contain object-left sm:h-[3.75rem] sm:max-w-[min(400px,52vw)]"
-              priority
-            />
-          </motion.div>
-        </Link>
+            <span className="sr-only">J&amp;J Management Solutions — Home</span>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 400, damping: 24 }}
+            >
+              <Image
+                src="/logo-wordmark.png"
+                alt=""
+                width={400}
+                height={110}
+                className="h-11 w-auto max-w-[min(200px,48vw)] object-contain object-left sm:h-12 sm:max-w-[min(260px,42vw)] md:h-[3.5rem] md:max-w-[min(320px,36vw)]"
+                priority
+              />
+            </motion.div>
+          </Link>
+        </div>
 
-        <nav className="hidden items-center gap-1 md:flex md:gap-5" aria-label="Primary">
+        <nav
+          className="col-start-2 row-start-1 hidden items-center justify-center gap-0.5 whitespace-nowrap md:flex lg:gap-1"
+          aria-label="Primary"
+        >
           {links.map((l) => (
             <Link key={l.href} href={l.href} className={linkClass}>
               {l.label}
@@ -85,24 +90,26 @@ export function Navbar() {
           ))}
         </nav>
 
-        <button
-          type="button"
-          className="flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-lg border border-[var(--color-border)]/80 bg-paper/90 text-[var(--color-ink)] md:hidden"
-          aria-expanded={menuOpen}
-          aria-controls="mobile-nav"
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-          onClick={() => setMenuOpen((o) => !o)}
-        >
-          {menuOpen ? (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
-        </button>
+        <div className="flex justify-self-end">
+          <button
+            type="button"
+            className="flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-lg border border-[var(--color-border)]/80 bg-paper/90 text-[var(--color-ink)] md:hidden"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-nav"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            onClick={() => setMenuOpen((o) => !o)}
+          >
+            {menuOpen ? (
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>

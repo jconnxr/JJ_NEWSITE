@@ -1,4 +1,4 @@
-import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/constants";
+import { PHONE_DISPLAY, PHONE_TEL, SERVICE_AREA_CITIES } from "@/lib/constants";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -10,6 +10,10 @@ export function Footer() {
           <strong>J&J Management Solutions</strong> · Oklahoma
         </p>
         <p className="mt-1">© {year} J&J Management Solutions. All rights reserved.</p>
+        <p className="mx-auto mt-4 max-w-2xl text-xs leading-relaxed sm:text-sm">
+          <span className="font-semibold text-[var(--color-ink)]">Service areas: </span>
+          {SERVICE_AREA_CITIES.join(" · ")}.
+        </p>
         <p className="mt-4">
           <a href={PHONE_TEL} className="font-semibold text-[var(--color-accent)] hover:underline">
             {PHONE_DISPLAY}

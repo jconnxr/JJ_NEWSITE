@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { PrimaryCtaLink } from "@/components/ui/primary-cta";
 import { BOOK_CALL_PATH, PHONE_TEL } from "@/lib/constants";
 
 /** Mobile-only bar: quick path to call or book after the visitor has scrolled past the hero */
@@ -34,12 +34,9 @@ export function StickyCta() {
           aria-label="Quick actions"
         >
           <div className="mx-auto flex max-w-6xl gap-2 px-3">
-            <Link
-              href={BOOK_CALL_PATH}
-              className="flex min-h-[48px] flex-1 items-center justify-center rounded-xl bg-[var(--color-navy)] px-3 text-sm font-semibold text-white"
-            >
+            <PrimaryCtaLink href={BOOK_CALL_PATH} className="min-h-[48px] flex-1 px-3 text-sm">
               Book a call
-            </Link>
+            </PrimaryCtaLink>
             <a
               href={PHONE_TEL}
               className="flex min-h-[48px] min-w-[5.5rem] shrink-0 items-center justify-center rounded-xl border border-[var(--color-border)] bg-paper px-2 text-sm font-semibold text-[var(--color-accent)]"
