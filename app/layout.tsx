@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Source_Serif_4 } from "next/font/google";
+import { NavigationUx } from "@/components/navigation/NavigationUx";
 import { LocalBusinessJsonLd } from "@/components/seo/LocalBusinessJsonLd";
 import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
@@ -68,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${dmSans.variable} ${sourceSerif.variable}`}>
       <body className="min-h-dvh overflow-x-clip antialiased">
         <LocalBusinessJsonLd />
+        <NavigationUx />
         {children}
       </body>
     </html>

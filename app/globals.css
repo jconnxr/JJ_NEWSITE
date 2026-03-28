@@ -26,9 +26,28 @@ html {
   scroll-padding-top: calc(5.25rem + env(safe-area-inset-top, 0px));
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 @media (min-width: 768px) {
   html {
     scroll-padding-top: calc(6rem + env(safe-area-inset-top, 0px));
+  }
+}
+
+/* Gentle section snap on long pages (landing + long inner pages with id=main); off when reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+
+  main#main > section,
+  main#main .snap-section-stack > section {
+    scroll-snap-align: center;
+    scroll-snap-stop: normal;
   }
 }
 
