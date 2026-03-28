@@ -1,18 +1,16 @@
 import { NextResponse } from "next/server";
+import {
+  getClientIp,
+  parseBookCallPayload,
+  rejectIfRateLimited,
+  rejectOversizedBody,
+  type ParsedBookCall,
+} from "@/lib/api-guards";
 import { bookingInboxReady, getBookingRecipient, sendSiteEmail } from "@/lib/site-mail";
 
 export const runtime = "nodejs";
 
-type Body = {
-  name: string;
-  businessName: string;
-  phone: string;
-  /** ISO date YYYY-MM-DD */
-  preferredDate: string;
-  fax?: string;
-};
-
-function buildMessage(data: Body): string {
+function buildMessage(data: ParsedBookCall): string {
   return [
     `Call scheduling request from your site`,
     ``,
@@ -32,27 +30,27 @@ function isValidISODate(s: string): boolean {
 }
 
 export async function POST(request: Request) {
-  let json: Body;
+  const oversized = rejectOversizedBody(request);
+  if (oversized) return oversized;
+
+  const limited = rejectIfRateLimited(getClientIp(request));
+  if (limited) return limited;
+
+  let json: unknown;
   try {
     json = await request.json();
   } catch {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
-  if (json.fax?.trim()) {
-    return NextResponse.json({ ok: true });
-  }
+  const parsed = parseBookCallPayload(json);
+  if (parsed instanceof NextResponse) return parsed;
 
-  const { name, businessName, phone, preferredDate } = json;
-  if (!name?.trim() || !businessName?.trim() || !phone?.trim() || !preferredDate?.trim()) {
-    return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
-  }
-
-  if (!isValidISODate(preferredDate.trim())) {
+  if (!isValidISODate(parsed.preferredDate)) {
     return NextResponse.json({ error: "Invalid date" }, { status: 400 });
   }
 
-  const chosen = new Date(preferredDate.trim() + "T12:00:00");
+  const chosen = new Date(parsed.preferredDate + "T12:00:00");
   const cutoff = new Date();
   cutoff.setUTCDate(cutoff.getUTCDate() - 1);
   cutoff.setUTCHours(0, 0, 0, 0);
@@ -72,17 +70,12 @@ export async function POST(request: Request) {
   }
 
   const to = getBookingRecipient()!;
-  const message = buildMessage({
-    name: name.trim(),
-    businessName: businessName.trim(),
-    phone: phone.trim(),
-    preferredDate: preferredDate.trim(),
-  });
+  const message = buildMessage(parsed);
 
   try {
     await sendSiteEmail({
       to,
-      subject: `[J&J Site] Call request — ${businessName.trim()} — ${preferredDate.trim()}`,
+      subject: `[J&J Site] Call request — ${parsed.businessName} — ${parsed.preferredDate}`,
       text: message,
     });
   } catch (err) {

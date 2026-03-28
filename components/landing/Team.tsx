@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Reveal } from "@/components/motion/Reveal";
 import { SectionFlowAccent } from "./SectionFlowAccent";
 import { JACOB_PHONE_DISPLAY, JACOB_PHONE_TEL, JOHN_PHONE_DISPLAY, JOHN_PHONE_TEL } from "@/lib/constants";
+import { getSafeTeamVideoEmbedSrc } from "@/lib/team-embed-url";
 
 const people = [
   {
@@ -46,6 +47,8 @@ const sharedBio = (
 );
 
 export function Team() {
+  const teamVideoSrc = getSafeTeamVideoEmbedSrc(process.env.NEXT_PUBLIC_TEAM_VIDEO_URL);
+
   return (
     <section
       id="team"
@@ -69,12 +72,12 @@ export function Team() {
           </p>
         </Reveal>
 
-        {process.env.NEXT_PUBLIC_TEAM_VIDEO_URL ? (
+        {teamVideoSrc ? (
           <Reveal delay={0.08}>
             <div className="mt-12 overflow-hidden rounded-2xl border border-[var(--color-border)] bg-black/20 shadow-lg shadow-black/30">
               <div className="aspect-video w-full">
                 <iframe
-                  src={process.env.NEXT_PUBLIC_TEAM_VIDEO_URL}
+                  src={teamVideoSrc}
                   title="Welcome from John and Jacob — J&J Management Solutions"
                   className="h-full w-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
