@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { PrimaryCtaLink } from "@/components/ui/primary-cta";
+import { BOOK_CALL_PATH } from "@/lib/constants";
 
 const links = [
   { href: "/why-online", label: "Why online" },
@@ -90,7 +92,13 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="flex justify-self-end">
+        <div className="flex items-center justify-end gap-2 sm:gap-3">
+          <PrimaryCtaLink
+            href={BOOK_CALL_PATH}
+            className="!hidden !min-h-10 shrink-0 !px-4 text-sm md:!inline-flex md:!min-h-11 md:!px-5 md:text-sm"
+          >
+            Book a call
+          </PrimaryCtaLink>
           <button
             type="button"
             className="flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-lg border border-[var(--color-border)]/80 bg-paper/90 text-[var(--color-ink)] md:hidden"
@@ -128,6 +136,15 @@ export function Navbar() {
                   {l.label}
                 </Link>
               ))}
+              <div className="mt-3 border-t border-[var(--color-border)]/80 pt-3">
+                <PrimaryCtaLink
+                  href={BOOK_CALL_PATH}
+                  className="w-full !min-h-12 px-6 text-base"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Book a call
+                </PrimaryCtaLink>
+              </div>
             </nav>
           </motion.div>
         )}

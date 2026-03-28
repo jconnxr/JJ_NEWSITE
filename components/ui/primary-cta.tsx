@@ -11,11 +11,12 @@ type LinkProps = {
   href: string;
   className?: string;
   children: ReactNode;
+  onClick?: () => void;
 };
 
-export function PrimaryCtaLink({ href, className = "", children }: LinkProps) {
+export function PrimaryCtaLink({ href, className = "", children, onClick }: LinkProps) {
   return (
-    <Link href={href} className={`${shell} ${className}`}>
+    <Link href={href} className={`${shell} ${className}`} onClick={onClick}>
       <span className={sheen} aria-hidden />
       <span className="relative z-[1]">{children}</span>
     </Link>
