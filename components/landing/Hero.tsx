@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { PHONE_DISPLAY, PHONE_TEL, RESPONSE_TIME, SERVICE_AREA } from "@/lib/constants";
+import { BOOK_CALL_PATH, PHONE_DISPLAY, PHONE_TEL, RESPONSE_TIME, SERVICE_AREA } from "@/lib/constants";
 import { HeroGeometricBackdrop } from "./HeroGeometricBackdrop";
 
 export function Hero() {
@@ -67,7 +67,7 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.48 }}
         >
           <Link
-            href="#book-call"
+            href={BOOK_CALL_PATH}
             className="inline-flex min-h-[48px] w-full items-center justify-center rounded-xl bg-[var(--color-navy)] px-7 text-base font-semibold text-white shadow-lg shadow-[var(--color-navy)]/20 transition hover:bg-[var(--color-navy-deep)] sm:w-auto sm:min-w-[200px] sm:text-sm"
           >
             Book a conversation

@@ -38,22 +38,13 @@ Update `metadataBase` and URLs in [`app/layout.tsx`](app/layout.tsx) when your d
 ## Content & links
 
 - Copy and sections live under [`components/landing/`](components/landing/).
-- **Scheduling, email, phone, area, response copy:** [`lib/constants.ts`](lib/constants.ts) — update `SCHEDULER_URL`, `CONTACT_MAILTO`, `PHONE_TEL` / `PHONE_DISPLAY` (use a real `tel:` link), `SERVICE_AREA`, and `RESPONSE_TIME` before going live.
+- **Scheduling, email, phone, area, response copy:** [`lib/constants.ts`](lib/constants.ts) — update `CONTACT_MAILTO`, `PHONE_TEL` / `PHONE_DISPLAY` (use a real `tel:` link), `SERVICE_AREA`, and `RESPONSE_TIME` before going live. Call requests use [`/book-call`](app/book-call/page.tsx) and email via [`app/api/book-call/route.ts`](app/api/book-call/route.ts) (optional `BOOKING_TO`, else `CONTACT_TO`).
 
-### Product inquiry form (Option B on the contact section)
+### Product inquiry form (contact section)
 
-The **“Get a product built for your business”** form posts to [`app/api/contact/route.ts`](app/api/contact/route.ts), which forwards to **[Web3Forms](https://web3forms.com/)** using a server-side key.
+The **“Get a plan for your business”** form posts to [`app/api/contact/route.ts`](app/api/contact/route.ts), which sends email through **your own SMTP** (no form middleman). Set server-only variables from [`.env.example`](.env.example): `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM`, `CONTACT_TO`, and optionally `SMTP_SECURE=true` for port 465.
 
-1. Create a free access key at [web3forms.com](https://web3forms.com).
-2. Add to `.env.local` (and your host’s environment):
-
-```bash
-WEB3FORMS_ACCESS_KEY=your_key_here
-```
-
-3. Restart `next dev` or redeploy. Submissions go to the inbox you set in Web3Forms.
-
-If `WEB3FORMS_ACCESS_KEY` is unset, the API returns `503` and the UI explains that the form is not connected yet—**Book a call** and **Email us** still work.
+If SMTP is not fully configured, the API returns `503` and the UI explains that the form is not connected yet—**Book a call** and **Email us** still work.
 
 ## Portfolio / case studies
 

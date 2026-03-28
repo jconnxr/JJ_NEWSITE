@@ -1,5 +1,5 @@
-/** Replace with your Cal.com, Calendly, or other booking URL */
-export const SCHEDULER_URL = "https://cal.com/your-link";
+/** In-app scheduling page (sends email via /api/book-call) */
+export const BOOK_CALL_PATH = "/book-call";
 
 /** Replace with your business email */
 export const CONTACT_MAILTO =

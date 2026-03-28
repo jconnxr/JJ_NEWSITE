@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { PHONE_TEL } from "@/lib/constants";
+import { BOOK_CALL_PATH, PHONE_TEL } from "@/lib/constants";
 
 /** Mobile-only bar: quick path to call or book after the visitor has scrolled past the hero */
 export function StickyCta() {
@@ -35,7 +35,7 @@ export function StickyCta() {
         >
           <div className="mx-auto flex max-w-6xl gap-2 px-3">
             <Link
-              href="#book-call"
+              href={BOOK_CALL_PATH}
               className="flex min-h-[48px] flex-1 items-center justify-center rounded-xl bg-[var(--color-navy)] px-3 text-sm font-semibold text-white"
             >
               Book a call

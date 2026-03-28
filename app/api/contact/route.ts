@@ -1,4 +1,7 @@
 import { NextResponse } from "next/server";
+import { contactInboxReady, sendSiteEmail } from "@/lib/site-mail";
+
+export const runtime = "nodejs";
 
 type Body = {
   name: string;
@@ -7,11 +10,12 @@ type Body = {
   businessName: string;
   focus: string;
   goals?: string;
+  fax?: string;
 };
 
 function buildEmailMessage(data: Body): string {
   return [
-    `New product / build inquiry from jjmanagementsolutions.com`,
+    `New product / build inquiry from your site`,
     ``,
     `Name: ${data.name}`,
     `Email: ${data.email}`,
@@ -25,13 +29,15 @@ function buildEmailMessage(data: Body): string {
 }
 
 export async function POST(request: Request) {
-  const key = process.env.WEB3FORMS_ACCESS_KEY;
-
   let json: Body;
   try {
     json = await request.json();
   } catch {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+  }
+
+  if (json.fax?.trim()) {
+    return NextResponse.json({ ok: true });
   }
 
   const { name, email, businessName, focus } = json;
@@ -44,11 +50,15 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid email" }, { status: 400 });
   }
 
-  if (!key) {
-    console.warn("[contact] WEB3FORMS_ACCESS_KEY not set — submission:", json);
+  if (!contactInboxReady()) {
+    console.warn("[contact] SMTP not fully configured — submission not sent:", {
+      name: name.trim(),
+      businessName: businessName.trim(),
+    });
     return NextResponse.json(
       {
-        error: "Form delivery is not configured yet. Add WEB3FORMS_ACCESS_KEY on the server.",
+        error:
+          "Form email is not configured on the server yet. Set SMTP_* and CONTACT_TO environment variables.",
         code: "NOT_CONFIGURED",
       },
       { status: 503 },
@@ -56,24 +66,22 @@ export async function POST(request: Request) {
   }
 
   const message = buildEmailMessage(json);
+  const subject = `[J&J Site] Build inquiry — ${businessName.trim()}`;
+  const to = process.env.CONTACT_TO!.trim();
 
-  const res = await fetch("https://api.web3forms.com/submit", {
-    method: "POST",
-    headers: { "Content-Type": "application/json", Accept: "application/json" },
-    body: JSON.stringify({
-      access_key: key,
-      subject: `[J&J Site] Build inquiry — ${businessName.trim()}`,
-      name: name.trim(),
-      email: email.trim(),
-      message,
-    }),
-  });
-
-  const data = await res.json().catch(() => ({}));
-
-  if (!res.ok) {
-    console.error("[contact] Web3Forms error:", res.status, data);
-    return NextResponse.json({ error: "Could not send message. Try again or email us directly." }, { status: 502 });
+  try {
+    await sendSiteEmail({
+      to,
+      subject,
+      text: message,
+      replyTo: email.trim(),
+    });
+  } catch (err) {
+    console.error("[contact] SMTP send failed:", err);
+    return NextResponse.json(
+      { error: "Could not send your message right now. Try again or call us directly." },
+      { status: 502 },
+    );
   }
 
   return NextResponse.json({ ok: true });

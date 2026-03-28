@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { focusOptions, type FocusOptionId } from "@/lib/product-focus-options";
 
@@ -15,6 +15,7 @@ export function ProductInquiryForm() {
   const [goals, setGoals] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const honeypotRef = useRef<HTMLInputElement>(null);
 
   const selected = focusOptions.find((o) => o.id === focus) ?? focusOptions[0];
 
@@ -34,6 +35,7 @@ export function ProductInquiryForm() {
           businessName: businessName.trim(),
           focus: `${selected.title} (${selected.id})`,
           goals: goals.trim(),
+          fax: honeypotRef.current?.value ?? "",
         }),
       });
 
@@ -42,7 +44,7 @@ export function ProductInquiryForm() {
       if (res.status === 503 && data?.code === "NOT_CONFIGURED") {
         setStatus("error");
         setErrorMessage(
-          "This form isn’t connected to email yet. Use “Book a call” or email us directly—or ask your developer to add WEB3FORMS_ACCESS_KEY.",
+          "This form isn’t connected to email yet. Use “Book a call” or email us directly—or ask your host to set SMTP settings.",
         );
         return;
       }
@@ -68,6 +70,15 @@ export function ProductInquiryForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-5 text-left">
+      <input
+        ref={honeypotRef}
+        type="text"
+        name="fax"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden
+        className="pointer-events-none absolute h-0 w-0 overflow-hidden opacity-0"
+      />
       <fieldset>
         <legend className="text-xs font-bold uppercase tracking-[0.12em] text-[var(--color-muted)]">
           What should we focus on?

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { SCHEDULER_URL, CONTACT_MAILTO } from "@/lib/constants";
+import { BOOK_CALL_PATH, CONTACT_MAILTO } from "@/lib/constants";
 import { Reveal } from "@/components/motion/Reveal";
 import { ProductInquiryForm } from "./ProductInquiryForm";
 
@@ -64,9 +64,7 @@ export function Contact() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
                   <Link
-                    href={SCHEDULER_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={BOOK_CALL_PATH}
                     className="inline-flex min-h-[48px] w-full items-center justify-center rounded-xl bg-[var(--color-navy)] px-8 text-base font-semibold text-white shadow-lg shadow-[var(--color-navy)]/25 transition hover:bg-[var(--color-navy-deep)] sm:w-auto sm:text-sm"
                   >
                     Schedule a call
