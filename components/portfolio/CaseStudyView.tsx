@@ -28,9 +28,9 @@ const PreviewBySlug: Record<string, ComponentType<PreviewProps>> = {
 };
 
 const categoryStyles: Record<string, string> = {
-  website: "bg-[var(--color-navy)]/10 text-[var(--color-navy)] ring-1 ring-[var(--color-navy)]/15",
-  booking: "bg-teal-50 text-teal-900 ring-1 ring-teal-200/60",
-  ads: "bg-violet-50 text-violet-900 ring-1 ring-violet-200/60",
+  website: "bg-[var(--color-accent)]/12 text-[var(--color-accent)] ring-1 ring-[var(--color-accent)]/20",
+  booking: "bg-teal-500/12 text-teal-200 ring-1 ring-teal-400/25",
+  ads: "bg-violet-500/12 text-violet-200 ring-1 ring-violet-400/25",
 };
 
 type Props = {
@@ -48,7 +48,7 @@ export function CaseStudyView({ project }: Props) {
   }, [project.slug]);
 
   return (
-    <div className="min-h-dvh bg-[var(--color-cream)] pb-16 pt-[calc(5.5rem+env(safe-area-inset-top,0px))] sm:pt-24">
+    <div className="min-h-dvh bg-[var(--color-cream)] pb-16 pt-[calc(6.25rem+env(safe-area-inset-top,0px))] sm:pt-[6.75rem]">
       <motion.div
         className="mx-auto max-w-5xl px-4 sm:px-6"
         initial={{ opacity: 0, y: 16 }}
@@ -57,7 +57,7 @@ export function CaseStudyView({ project }: Props) {
       >
         <Link
           href="/#portfolio"
-          className="inline-flex min-h-12 items-center gap-2 text-base font-medium text-[var(--color-accent)] transition hover:text-[var(--color-navy)] sm:text-sm"
+          className="inline-flex min-h-12 items-center gap-2 text-base font-medium text-[var(--color-accent)] transition hover:text-[var(--color-ink-deep)] sm:text-sm"
         >
           <span aria-hidden>←</span> Back to work samples
         </Link>
@@ -78,7 +78,7 @@ export function CaseStudyView({ project }: Props) {
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-[var(--color-muted)]">{project.excerpt}</p>
 
-        <div className="mt-10 grid gap-6 rounded-2xl border border-[var(--color-border)] bg-white/80 p-6 shadow-sm backdrop-blur sm:grid-cols-2 sm:p-8">
+        <div className="mt-10 grid gap-6 rounded-2xl border border-[var(--color-border)] bg-paper/90 p-6 shadow-sm backdrop-blur sm:grid-cols-2 sm:p-8">
           <div>
             <h2 className="text-xs font-bold uppercase tracking-[0.15em] text-[var(--color-muted)]">Context</h2>
             <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]">{project.challenge}</p>
@@ -111,7 +111,7 @@ export function CaseStudyView({ project }: Props) {
                 className={`min-h-[44px] rounded-xl border px-4 py-2.5 text-left text-sm font-medium transition sm:min-h-0 ${
                   previewVariant === i
                     ? "border-[var(--color-navy)] bg-[var(--color-navy)] text-white shadow-md shadow-[var(--color-navy)]/15"
-                    : "border-[var(--color-border)] bg-white/90 text-[var(--color-ink)] hover:border-[var(--color-accent)]/35"
+                    : "border-[var(--color-border)] bg-paper text-[var(--color-ink)] hover:border-[var(--color-accent)]/35"
                 }`}
               >
                 <span className="text-[10px] font-bold uppercase tracking-wide opacity-80">Look {i + 1}</span>
@@ -147,7 +147,7 @@ export function CaseStudyView({ project }: Props) {
           </Link>
           <Link
             href="/#portfolio"
-            className="inline-flex min-h-[48px] w-full items-center justify-center rounded-xl border border-[var(--color-border)] bg-white px-8 text-base font-semibold text-[var(--color-navy)] sm:w-auto sm:text-sm"
+            className="inline-flex min-h-[48px] w-full items-center justify-center rounded-xl border border-[var(--color-border)] bg-paper px-8 text-base font-semibold text-[var(--color-accent)] sm:w-auto sm:text-sm"
           >
             More project samples
           </Link>

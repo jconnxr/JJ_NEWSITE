@@ -20,13 +20,13 @@ const items = [
 
 export function TrustStrip() {
   return (
-    <section className="border-b border-[var(--color-border)] bg-white py-16 sm:py-20" aria-label="How we work">
+    <section className="border-b border-[var(--color-border)] bg-paper py-16 sm:py-20" aria-label="How we work">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Stagger className="grid gap-10 md:grid-cols-3 md:gap-8">
           {items.map(({ title, body }) => (
             <StaggerItem key={title}>
               <motion.div
-                className="group relative rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)]/50 p-6 transition-colors hover:border-[var(--color-accent)]/25 hover:bg-white"
+                className="group relative rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)]/60 p-6 transition-colors hover:border-[var(--color-accent)]/30 hover:bg-[var(--color-surface-alt)]"
                 whileHover={{ y: -3 }}
                 transition={{ type: "spring", stiffness: 400, damping: 28 }}
               >

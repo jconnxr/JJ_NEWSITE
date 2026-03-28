@@ -78,8 +78,8 @@ export function ProductInquiryForm() {
               key={opt.id}
               className={`flex min-h-[48px] cursor-pointer items-center gap-3 rounded-xl border px-3 py-3 transition ${
                 focus === opt.id
-                  ? "border-[var(--color-accent)] bg-white shadow-sm ring-1 ring-[var(--color-accent)]/20"
-                  : "border-[var(--color-border)] bg-white/60 active:bg-white hover:border-[var(--color-navy)]/20"
+                  ? "border-[var(--color-accent)] bg-paper shadow-sm ring-1 ring-[var(--color-accent)]/20"
+                  : "border-[var(--color-border)] bg-paper/75 active:bg-paper hover:border-[var(--color-navy)]/20"
               }`}
             >
               <input
@@ -109,7 +109,7 @@ export function ProductInquiryForm() {
           <p className="font-medium text-[var(--color-ink)]">{selected.title}</p>
           <p className="mt-2">{selected.description}</p>
           <p className="mt-3 border-t border-[var(--color-border)]/60 pt-3 text-[var(--color-ink)]/90">
-            <span className="font-semibold text-[var(--color-navy)]">How it helps: </span>
+            <span className="font-semibold text-[var(--color-gold)]">How it helps: </span>
             {selected.helpsWith}
           </p>
         </motion.div>
@@ -122,7 +122,7 @@ export function ProductInquiryForm() {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="mt-1.5 min-h-[48px] w-full rounded-lg border border-[var(--color-border)] bg-white px-3 py-2.5 text-base text-[var(--color-ink)] sm:text-sm"
+            className="mt-1.5 min-h-[48px] w-full rounded-lg border border-[var(--color-border)] bg-paper px-3 py-2.5 text-base text-[var(--color-ink)] sm:text-sm"
             autoComplete="name"
             inputMode="text"
           />
@@ -134,7 +134,7 @@ export function ProductInquiryForm() {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="mt-1.5 min-h-[48px] w-full rounded-lg border border-[var(--color-border)] bg-white px-3 py-2.5 text-base text-[var(--color-ink)] sm:text-sm"
+            className="mt-1.5 min-h-[48px] w-full rounded-lg border border-[var(--color-border)] bg-paper px-3 py-2.5 text-base text-[var(--color-ink)] sm:text-sm"
             autoComplete="email"
             inputMode="email"
           />
@@ -145,7 +145,7 @@ export function ProductInquiryForm() {
             type="tel"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="mt-1.5 min-h-[48px] w-full rounded-lg border border-[var(--color-border)] bg-white px-3 py-2.5 text-base text-[var(--color-ink)] sm:text-sm"
+            className="mt-1.5 min-h-[48px] w-full rounded-lg border border-[var(--color-border)] bg-paper px-3 py-2.5 text-base text-[var(--color-ink)] sm:text-sm"
             autoComplete="tel"
             inputMode="tel"
           />
@@ -156,7 +156,7 @@ export function ProductInquiryForm() {
             required
             value={businessName}
             onChange={(e) => setBusinessName(e.target.value)}
-            className="mt-1.5 min-h-[48px] w-full rounded-lg border border-[var(--color-border)] bg-white px-3 py-2.5 text-base text-[var(--color-ink)] sm:text-sm"
+            className="mt-1.5 min-h-[48px] w-full rounded-lg border border-[var(--color-border)] bg-paper px-3 py-2.5 text-base text-[var(--color-ink)] sm:text-sm"
             autoComplete="organization"
           />
         </label>
@@ -171,19 +171,19 @@ export function ProductInquiryForm() {
             value={goals}
             onChange={(e) => setGoals(e.target.value)}
             rows={3}
-            className="mt-1.5 min-h-[96px] w-full resize-y rounded-lg border border-[var(--color-border)] bg-white px-3 py-3 text-base text-[var(--color-ink)] sm:text-sm"
+            className="mt-1.5 min-h-[96px] w-full resize-y rounded-lg border border-[var(--color-border)] bg-paper px-3 py-3 text-base text-[var(--color-ink)] sm:text-sm"
             placeholder="e.g. No website yet, or we’re not showing up for local searches…"
           />
         </label>
       </div>
 
       {status === "error" && (
-        <p className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800" role="alert">
+        <p className="rounded-lg border border-red-500/40 bg-red-950/50 px-3 py-2 text-sm text-red-200" role="alert">
           {errorMessage}
         </p>
       )}
       {status === "success" && (
-        <p className="rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm text-emerald-900" role="status">
+        <p className="rounded-lg border border-emerald-500/35 bg-emerald-950/45 px-3 py-2 text-sm text-emerald-200" role="status">
           Thanks—we received your details. We’ll review and reach out shortly.
         </p>
       )}

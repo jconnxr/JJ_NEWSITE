@@ -75,7 +75,7 @@ export function Team() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.55, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-              className="group overflow-hidden rounded-3xl border border-[var(--color-border)] bg-white shadow-xl shadow-[var(--color-navy)]/[0.06]"
+              className="group overflow-hidden rounded-3xl border border-[var(--color-border)] bg-paper shadow-xl shadow-black/40"
             >
               <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-surface-alt)]">
                 <motion.div
@@ -100,7 +100,7 @@ export function Team() {
                 <p className="mt-4">
                   <a
                     href={person.tel}
-                    className="text-base font-semibold text-[var(--color-navy)] underline-offset-2 hover:underline"
+                    className="text-base font-semibold text-[var(--color-accent)] underline-offset-2 hover:underline"
                   >
                     {person.telDisplay}
                   </a>
@@ -111,7 +111,7 @@ export function Team() {
         </div>
 
         <Reveal delay={0.1}>
-          <div className="mt-12 rounded-2xl border border-[var(--color-border)] bg-white/90 p-6 shadow-sm sm:p-8">
+          <div className="mt-12 rounded-2xl border border-[var(--color-border)] bg-paper/95 p-6 shadow-sm sm:p-8">
             <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-[var(--color-muted)]">Our story</h3>
             <div className="mt-4 max-w-3xl text-sm leading-relaxed text-[var(--color-ink)] sm:text-base">{sharedBio}</div>
           </div>

@@ -6,18 +6,18 @@ import { projects } from "@/lib/portfolio-data";
 import { Reveal } from "@/components/motion/Reveal";
 
 const categoryBadge: Record<string, string> = {
-  website: "bg-[var(--color-navy)]/10 text-[var(--color-navy)] ring-1 ring-[var(--color-navy)]/12",
-  booking: "bg-teal-50 text-teal-900 ring-1 ring-teal-200/50",
-  ads: "bg-violet-50 text-violet-900 ring-1 ring-violet-200/50",
+  website: "bg-[var(--color-accent)]/12 text-[var(--color-accent)] ring-1 ring-[var(--color-accent)]/20",
+  booking: "bg-teal-500/12 text-teal-200 ring-1 ring-teal-400/25",
+  ads: "bg-violet-500/12 text-violet-200 ring-1 ring-violet-400/25",
 };
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="scroll-mt-24 border-t border-[var(--color-border)] bg-white py-16 sm:py-20">
+    <section id="portfolio" className="scroll-mt-24 border-t border-[var(--color-border)] bg-paper py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
           <p
-            className="mb-4 inline-block rounded-full border border-amber-200/90 bg-amber-50 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-amber-950"
+            className="mb-4 inline-block rounded-full border border-[var(--color-gold)]/35 bg-[var(--color-gold)]/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-[var(--color-gold)]"
             role="note"
           >
             Sample projects — not real businesses
@@ -45,7 +45,7 @@ export function Portfolio() {
             >
               <Link
                 href={`/work/${p.slug}`}
-                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-cream)]/40 shadow-[0_4px_24px_rgba(30,58,95,0.06)] transition hover:border-[var(--color-accent)]/25 hover:shadow-[0_12px_40px_rgba(30,58,95,0.1)]"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-alt)]/50 shadow-[0_4px_24px_rgba(0,0,0,0.35)] transition hover:border-[var(--color-accent)]/30 hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)]"
               >
                 <div className="flex flex-1 flex-col p-6 sm:p-7">
                   <div className="flex flex-wrap items-center gap-2">

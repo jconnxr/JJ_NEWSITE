@@ -58,14 +58,14 @@ export function Services() {
               viewport={{ once: true, margin: "-8%" }}
               transition={{ duration: 0.5, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -6, transition: { duration: 0.25 } }}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white p-6 shadow-[0_4px_24px_rgba(30,58,95,0.06)]"
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-[var(--color-border)] bg-paper p-6 shadow-[0_4px_24px_rgba(0,0,0,0.35)]"
             >
               <span className="mb-4 font-mono text-xs font-medium tracking-widest text-[var(--color-accent)]/80">
                 {s.icon}
               </span>
               <h3 className="font-serif text-lg font-semibold text-[var(--color-ink-deep)]">{s.title}</h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--color-muted)]">{s.description}</p>
-              <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-transparent transition group-hover:ring-[var(--color-navy)]/10" />
+              <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-transparent transition group-hover:ring-[var(--color-accent)]/15" />
             </motion.article>
           ))}
         </div>

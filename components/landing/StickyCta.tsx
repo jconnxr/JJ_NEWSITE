@@ -25,7 +25,7 @@ export function StickyCta() {
     <AnimatePresence>
       {visible && (
         <motion.div
-          className="fixed inset-x-0 bottom-0 z-40 border-t border-[var(--color-border)] bg-[var(--color-cream)]/96 pb-[max(0.65rem,env(safe-area-inset-bottom,0px))] pt-2 shadow-[0_-8px_32px_rgba(30,58,95,0.12)] backdrop-blur-md md:hidden"
+          className="fixed inset-x-0 bottom-0 z-40 border-t border-[var(--color-border)] bg-[var(--color-cream)]/96 pb-[max(0.65rem,env(safe-area-inset-bottom,0px))] pt-2 shadow-[0_-8px_32px_rgba(0,0,0,0.5)] backdrop-blur-md md:hidden"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
@@ -42,7 +42,7 @@ export function StickyCta() {
             </Link>
             <a
               href={PHONE_TEL}
-              className="flex min-h-[48px] min-w-[5.5rem] shrink-0 items-center justify-center rounded-xl border border-[var(--color-border)] bg-white px-2 text-sm font-semibold text-[var(--color-navy)]"
+              className="flex min-h-[48px] min-w-[5.5rem] shrink-0 items-center justify-center rounded-xl border border-[var(--color-border)] bg-paper px-2 text-sm font-semibold text-[var(--color-accent)]"
             >
               Call
             </a>

@@ -13,7 +13,7 @@ export function Contact() {
       className="scroll-mt-24 relative overflow-hidden py-20 sm:py-28"
       aria-labelledby="contact-heading"
     >
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[var(--color-navy-deep)] via-[var(--color-navy)] to-[#0f172a]" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[var(--color-navy-deep)] via-[var(--color-navy)] to-[var(--color-cream)]" />
       <motion.div
         className="pointer-events-none absolute -right-1/4 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.12)_0%,transparent_65%)] blur-3xl"
         animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.7, 0.4] }}
@@ -39,7 +39,7 @@ export function Contact() {
           <Reveal>
             <div
               id="book-call"
-              className="scroll-mt-[calc(7rem+env(safe-area-inset-top,0px))] flex h-full flex-col rounded-2xl border border-white/15 bg-white/95 p-6 text-[var(--color-ink)] shadow-xl shadow-black/10 backdrop-blur sm:p-8"
+              className="scroll-mt-[calc(7rem+env(safe-area-inset-top,0px))] flex h-full flex-col rounded-2xl border border-[var(--color-border)]/80 bg-paper/95 p-6 text-[var(--color-ink)] shadow-xl shadow-black/10 backdrop-blur sm:p-8"
             >
               <p className="text-xs font-bold uppercase tracking-[0.15em] text-[var(--color-accent)]">Talk with us</p>
               <h3 className="mt-2 font-serif text-2xl font-semibold text-[var(--color-ink-deep)]">Book a call</h3>
@@ -85,7 +85,7 @@ export function Contact() {
           <Reveal delay={0.08}>
             <div
               id="product-inquiry"
-              className="scroll-mt-[calc(7rem+env(safe-area-inset-top,0px))] flex h-full flex-col rounded-2xl border border-white/15 bg-white/95 p-6 text-[var(--color-ink)] shadow-xl shadow-black/10 backdrop-blur sm:p-8"
+              className="scroll-mt-[calc(7rem+env(safe-area-inset-top,0px))] flex h-full flex-col rounded-2xl border border-[var(--color-border)]/80 bg-paper/95 p-6 text-[var(--color-ink)] shadow-xl shadow-black/10 backdrop-blur sm:p-8"
             >
               <p className="text-xs font-bold uppercase tracking-[0.15em] text-[var(--color-accent)]">
                 Tell us in writing

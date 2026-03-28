@@ -43,40 +43,38 @@ export function Navbar() {
   }, []);
 
   const linkClass =
-    "flex min-h-12 items-center rounded-lg px-3 text-base font-medium text-[var(--color-ink)] transition-colors hover:bg-[var(--color-navy)]/5 hover:text-[var(--color-accent)] md:min-h-0 md:text-sm";
+    "flex min-h-12 items-center rounded-lg px-3 text-base font-medium text-[var(--color-ink)] transition-colors hover:bg-white/[0.06] hover:text-[var(--color-accent)] md:min-h-0 md:text-sm";
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b pt-[env(safe-area-inset-top,0px)] transition-[background,box-shadow,border-color] duration-300 ${
         scrolled || menuOpen
-          ? "border-[var(--color-border)]/90 bg-[var(--color-cream)]/[0.96] shadow-[0_8px_30px_rgba(30,58,95,0.08)] backdrop-blur-xl"
-          : "border-transparent bg-[var(--color-cream)]/70 backdrop-blur-md"
+          ? "border-[var(--color-border)]/90 bg-[var(--color-cream)]/[0.94] shadow-[0_8px_30px_rgba(0,0,0,0.45)] backdrop-blur-xl"
+          : "border-transparent bg-[var(--color-cream)]/75 backdrop-blur-md"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3.5 sm:px-6 sm:py-4">
         <Link
           href="/"
-          className="group flex min-w-0 flex-1 items-center gap-2.5 no-underline sm:gap-3 sm:flex-initial"
+          className="group flex min-w-0 flex-1 items-center gap-2.5 no-underline sm:flex-initial"
           onClick={() => setMenuOpen(false)}
         >
+          <span className="sr-only">J&amp;J Management Solutions — Home</span>
           <motion.div
-            whileHover={{ scale: 1.03 }}
+            whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             transition={{ type: "spring", stiffness: 400, damping: 24 }}
             className="shrink-0"
           >
             <Image
-              src="/logo.png"
-              alt="J&J Management Solutions"
-              width={44}
-              height={44}
-              className="h-10 w-auto sm:h-11"
+              src="/logo-wordmark.png"
+              alt=""
+              width={400}
+              height={110}
+              className="h-12 w-auto max-w-[min(300px,72vw)] object-contain object-left sm:h-[3.75rem] sm:max-w-[min(400px,52vw)]"
               priority
             />
           </motion.div>
-          <span className="truncate font-serif text-sm font-semibold tracking-tight text-[var(--color-ink)] sm:text-base">
-            J&J Management Solutions
-          </span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex md:gap-5" aria-label="Primary">
@@ -89,7 +87,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-lg border border-[var(--color-border)]/80 bg-white/80 text-[var(--color-ink)] md:hidden"
+          className="flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-lg border border-[var(--color-border)]/80 bg-paper/90 text-[var(--color-ink)] md:hidden"
           aria-expanded={menuOpen}
           aria-controls="mobile-nav"
           aria-label={menuOpen ? "Close menu" : "Open menu"}

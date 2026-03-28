@@ -1,15 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #f7f5f2;
-  --color-surface-alt: #eef1f6;
-  --color-ink: #1a2332;
-  --color-ink-deep: #152a45;
-  --color-muted: #4a5568;
+  /* Executive dark — charcoal / midnight base, steel highlights, subtle gold for premium cues */
+  --color-cream: #06080c;
+  --color-paper: #0f1218;
+  --color-surface-alt: #171c26;
+  --color-ink: #e2e6ed;
+  --color-ink-deep: #f2f4f8;
+  --color-muted: #949daa;
   --color-navy: #1e3a5f;
-  --color-navy-deep: #152a45;
-  --color-accent: #2c5282;
-  --color-border: #d9dee6;
+  --color-navy-deep: #142a45;
+  --color-accent: #8eb3d4;
+  --color-gold: #c4a86a;
+  --color-border: #2a3140;
   --font-family-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   --font-family-serif: var(--font-source-serif), ui-serif, Georgia, serif;
 }
@@ -19,12 +22,12 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   /* Anchor jumps clear the fixed header + notch */
-  scroll-padding-top: calc(4.5rem + env(safe-area-inset-top, 0px));
+  scroll-padding-top: calc(5.25rem + env(safe-area-inset-top, 0px));
 }
 
 @media (min-width: 768px) {
   html {
-    scroll-padding-top: 5rem;
+    scroll-padding-top: calc(6rem + env(safe-area-inset-top, 0px));
   }
 }
 
@@ -44,8 +47,13 @@ body {
   [role="button"] {
     touch-action: manipulation;
   }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: color-mix(in srgb, var(--color-muted) 70%, transparent);
+  }
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--color-accent) 28%, transparent);
+  background: color-mix(in srgb, var(--color-gold) 32%, var(--color-navy-deep));
 }
