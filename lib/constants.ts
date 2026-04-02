@@ -31,3 +31,12 @@ export const SERVICE_AREA_CITIES = [
 
 /** Sets expectations after form or call */
 export const RESPONSE_TIME = "We usually reply within one business day.";
+
+/** Shown on the book-a-call card — keep truthful; adjust to match your calendar */
+export const BOOKING_AVAILABILITY_NOTE = "We usually keep 2–3 call slots open per week—most are booked within a few days.";
+
+/** Optional public Google reviews URL (set in .env as NEXT_PUBLIC_GOOGLE_REVIEWS_URL) */
+export const GOOGLE_REVIEWS_URL = (process.env.NEXT_PUBLIC_GOOGLE_REVIEWS_URL ?? "").trim();
+
+/** SMS to primary line — for “Text us” / chat alternatives */
+export const SMS_URI = "sms:+14053123681";

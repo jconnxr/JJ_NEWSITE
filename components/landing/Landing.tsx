@@ -7,14 +7,18 @@ import { ScrollProgress } from "./ScrollProgress";
 import { SiteGridBackdrop } from "./SiteGridBackdrop";
 import { StickyCta } from "./StickyCta";
 
+const OutcomesBar = dynamic(() => import("./OutcomesBar").then((m) => ({ default: m.OutcomesBar })));
 const Bridge = dynamic(() => import("./Bridge").then((m) => ({ default: m.Bridge })));
 const WhyOnlineTeaser = dynamic(() => import("./WhyOnlineTeaser").then((m) => ({ default: m.WhyOnlineTeaser })));
 const TrustStrip = dynamic(() => import("./TrustStrip").then((m) => ({ default: m.TrustStrip })));
 const Process = dynamic(() => import("./Process").then((m) => ({ default: m.Process })));
 const Portfolio = dynamic(() => import("./Portfolio").then((m) => ({ default: m.Portfolio })));
 const Services = dynamic(() => import("./Services").then((m) => ({ default: m.Services })));
+const Testimonials = dynamic(() => import("./Testimonials").then((m) => ({ default: m.Testimonials })));
 const Team = dynamic(() => import("./Team").then((m) => ({ default: m.Team })));
+const Faq = dynamic(() => import("./Faq").then((m) => ({ default: m.Faq })));
 const Contact = dynamic(() => import("./Contact").then((m) => ({ default: m.Contact })));
+const ScrollEmailCapture = dynamic(() => import("./ScrollEmailCapture").then((m) => ({ default: m.ScrollEmailCapture })));
 
 export function Landing() {
   return (
@@ -31,15 +35,19 @@ export function Landing() {
       <SiteGridBackdrop />
       <main id="main" className="relative z-[1] min-w-0 max-w-[100vw] overflow-x-clip pb-16 md:pb-0">
         <Hero />
+        <OutcomesBar />
         <Bridge />
         <WhyOnlineTeaser />
         <TrustStrip />
         <Process />
         <Portfolio />
         <Services />
+        <Testimonials />
         <Team />
+        <Faq />
         <Contact />
       </main>
+      <ScrollEmailCapture />
       <StickyCta />
     </>
   );

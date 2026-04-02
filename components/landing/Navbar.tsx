@@ -11,6 +11,8 @@ const links = [
   { href: "/why-online", label: "Why online" },
   { href: "/#services", label: "Services" },
   { href: "/#portfolio", label: "Work" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/#faq", label: "FAQ" },
   { href: "/#team", label: "Team" },
   { href: "/#contact", label: "Contact" },
 ];
@@ -56,7 +58,7 @@ export function Navbar() {
           : "border-transparent bg-[var(--color-cream)]/80 backdrop-blur-sm md:bg-[var(--color-cream)]/75 md:backdrop-blur-md"
       }`}
     >
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-[auto_1fr_auto] items-center gap-x-3 px-4 py-3.5 sm:gap-x-4 sm:px-6 sm:py-4 md:grid-cols-[1fr_auto_1fr]">
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-[auto_1fr_auto] items-center gap-x-2 px-4 py-3.5 sm:gap-x-3 sm:px-6 sm:py-4 md:grid-cols-[auto_1fr_auto] lg:gap-x-4">
         <div className="flex min-w-0 justify-self-start">
           <Link
             href="/"
@@ -82,7 +84,7 @@ export function Navbar() {
         </div>
 
         <nav
-          className="col-start-2 row-start-1 hidden items-center justify-center gap-0.5 whitespace-nowrap md:flex lg:gap-1"
+          className="col-start-2 row-start-1 hidden items-center justify-center gap-0.5 whitespace-nowrap md:flex md:gap-0.5 lg:gap-1"
           aria-label="Primary"
         >
           {links.map((l) => (

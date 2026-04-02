@@ -21,21 +21,15 @@ export function Portfolio() {
       <SectionFlowAccent phase={3} side="left" />
       <div className="relative z-[1] mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
-          <p
-            className="mb-4 inline-block rounded-full border border-[var(--color-gold)]/35 bg-[var(--color-gold)]/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-[var(--color-gold)]"
-            role="note"
-          >
-            Sample projects — not real businesses
-          </p>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-accent)]">Selected work</p>
           <h2 className="mt-2 font-serif text-3xl font-semibold tracking-tight text-[var(--color-ink-deep)] sm:text-4xl lg:tracking-tight">
-            See what we can build
+            Interactive walkthroughs
           </h2>
         </Reveal>
         <Reveal delay={0.06}>
           <p className="mt-4 max-w-2xl text-lg text-[var(--color-muted)]">
-            These are fictional brands with real structure—full-page mocks that show how we think about sites, booking
-            systems, and ad programs. Open any project for the full walkthrough and interactive preview.
+            Explore full-page demos that show how we structure sites, booking flows, and ad programs. Each project page
+            explains context up front—open any card for the guided preview.
           </p>
         </Reveal>
 
@@ -66,7 +60,7 @@ export function Portfolio() {
                   </h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--color-muted)]">{p.excerpt}</p>
                   <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-accent)]">
-                    View sample
+                    Open walkthrough
                     <span className="transition group-hover:translate-x-1" aria-hidden>
                       →
                     </span>

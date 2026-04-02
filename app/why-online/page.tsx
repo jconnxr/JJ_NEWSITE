@@ -5,6 +5,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { SectionFlowAccent } from "@/components/landing/SectionFlowAccent";
 import { SiteGridBackdrop } from "@/components/landing/SiteGridBackdrop";
 import { getSiteUrl } from "@/lib/site-url";
+import { blogPosts } from "@/lib/blog-posts";
 import { whyOnlineGroups, whyOnlineSources } from "@/lib/why-online-stats";
 
 const path = "/why-online";
@@ -136,6 +137,36 @@ export default function WhyOnlinePage() {
                 </li>
               ))}
             </ul>
+          </section>
+
+          <section
+            className="rounded-2xl border border-[var(--color-border)] bg-paper/90 p-6 sm:p-8"
+            aria-labelledby="resources-heading"
+          >
+            <h2 id="resources-heading" className="font-serif text-xl font-semibold text-[var(--color-ink-deep)]">
+              Related resources
+            </h2>
+            <p className="mt-2 text-sm text-[var(--color-muted)]">
+              Practical posts that pair with the research above—reviews, site basics, and when to rebuild.
+            </p>
+            <ul className="mt-6 space-y-3 text-left text-sm">
+              {blogPosts.map((post) => (
+                <li key={post.slug}>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="font-semibold text-[var(--color-accent)] underline-offset-2 hover:underline"
+                  >
+                    {post.title}
+                  </Link>
+                  <p className="mt-0.5 text-xs text-[var(--color-muted)]">{post.excerpt}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6">
+              <Link href="/blog" className="text-sm font-semibold text-[var(--color-accent)] hover:underline">
+                All resources →
+              </Link>
+            </p>
           </section>
 
           <section

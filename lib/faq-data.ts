@@ -1,0 +1,32 @@
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+export const faqItems: FaqItem[] = [
+  {
+    question: "How long does a typical website or systems project take?",
+    answer:
+      "Almost every install goes live in under a week unless the work is unusually complex—think heavy custom integrations, large migrations, or multi-system rollouts. In those cases we’ll spell out why and what to expect. Your overall timeline still depends on scope, approvals, and how quickly you can share assets—we’ll give you a clear range on the discovery call.",
+  },
+  {
+    question: "Do you only work in Oklahoma?",
+    answer:
+      "We’re based in Oklahoma City and built for Oklahoma businesses—metro, small towns, and statewide. If you’re nearby or operate primarily in-state, we’re a fit; reach out and we’ll confirm.",
+  },
+  {
+    question: "Can you work with what we already have (site, CRM, ads)?",
+    answer:
+      "Yes. We often fix, extend, or replace pieces instead of starting from zero—audits, migrations, and cleanup are normal. We’ll tell you honestly what’s worth keeping versus rebuilding.",
+  },
+  {
+    question: "How does pricing work?",
+    answer:
+      "We publish starting ranges on our pricing page so you know whether we’re in the ballpark before you book a call. Final quotes depend on scope after we understand your goals.",
+  },
+  {
+    question: "What happens after I book a call?",
+    answer:
+      "You’ll get a focused conversation—usually 20–30 minutes—to clarify goals, timeline, and budget. We follow up with a clear next step, whether that’s a proposal, a smaller starter project, or a polite no if we’re not the right fit.",
+  },
+];

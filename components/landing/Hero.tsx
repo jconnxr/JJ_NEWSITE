@@ -3,7 +3,14 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { PrimaryCtaLink } from "@/components/ui/primary-cta";
-import { BOOK_CALL_PATH, PHONE_DISPLAY, PHONE_TEL, RESPONSE_TIME, SERVICE_AREA } from "@/lib/constants";
+import {
+  BOOK_CALL_PATH,
+  GOOGLE_REVIEWS_URL,
+  PHONE_DISPLAY,
+  PHONE_TEL,
+  RESPONSE_TIME,
+  SERVICE_AREA,
+} from "@/lib/constants";
 import { useNarrowViewport } from "@/lib/use-narrow-viewport";
 import { HeroTechBackdrop } from "./HeroTechBackdrop";
 
@@ -61,7 +68,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
         >
-          Websites, leads, and systems—without the jargon
+          Turn more website visitors into booked work—without the jargon
         </motion.h1>
         <motion.p
           className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[var(--color-muted)] sm:text-lg"
@@ -69,8 +76,8 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
         >
-          We help Oklahoma businesses look credible on the web, capture leads, and stay organized—new sites, fixes to
-          what you already have, CRMs, ads, and booking tools. You work directly with both of us, in plain language.
+          We help Oklahoma businesses look credible online, capture leads, and close the loop with CRMs, ads, and
+          booking tools—new builds or fixes to what you already have. You work directly with both of us, in plain language.
         </motion.p>
         <motion.div
           className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap"
@@ -85,12 +92,37 @@ export function Hero() {
             Book a conversation
           </PrimaryCtaLink>
           <Link
-            href="#product-inquiry"
+            href="/#faq"
             className="inline-flex min-h-[48px] w-full items-center justify-center rounded-xl border border-[var(--color-border)] bg-paper/90 px-7 text-base font-semibold text-[var(--color-accent)] backdrop-blur-sm transition hover:border-[var(--color-accent)]/35 hover:bg-paper sm:w-auto sm:text-sm"
           >
-            Tell us what you need
+            Get a free plan →
           </Link>
         </motion.div>
+
+        <motion.p
+          className="mx-auto mt-6 max-w-xl text-center text-sm text-[var(--color-muted)]"
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, delay: 0.52 }}
+        >
+          <span className="text-[var(--color-gold)]" aria-hidden>
+            ★★★★★
+          </span>{" "}
+          <span className="text-[var(--color-ink)]">Trusted by Oklahoma businesses statewide</span>
+          {GOOGLE_REVIEWS_URL ? (
+            <>
+              {" · "}
+              <a
+                href={GOOGLE_REVIEWS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[var(--color-accent)] underline-offset-2 hover:underline"
+              >
+                Google reviews
+              </a>
+            </>
+          ) : null}
+        </motion.p>
 
         <motion.div
           className="mt-10 border-t border-[var(--color-border)]/60 pt-8"

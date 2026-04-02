@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Source_Serif_4 } from "next/font/google";
+import { ChatWidget } from "@/components/chat/ChatWidget";
 import { NavigationUx } from "@/components/navigation/NavigationUx";
 import { LocalBusinessJsonLd } from "@/components/seo/LocalBusinessJsonLd";
 import { getSiteUrl } from "@/lib/site-url";
@@ -70,6 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-dvh overflow-x-clip antialiased">
         <LocalBusinessJsonLd />
         <NavigationUx />
+        <ChatWidget />
         {children}
       </body>
     </html>

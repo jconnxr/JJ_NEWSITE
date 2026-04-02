@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { PrimaryCtaLink } from "@/components/ui/primary-cta";
 import { Reveal } from "@/components/motion/Reveal";
 import { SectionFlowAccent } from "./SectionFlowAccent";
 
@@ -57,6 +59,21 @@ export function Process() {
             </Reveal>
           ))}
         </ol>
+
+        <Reveal delay={0.32}>
+          <div className="mt-14 flex flex-col items-center gap-4 border-t border-[var(--color-border)]/80 pt-12 text-center">
+            <p className="max-w-lg text-lg text-[var(--color-muted)]">Ready to see how step 1 works for your business?</p>
+            <PrimaryCtaLink href="/#book-call" className="px-10 text-base">
+              Ready to start step 1?
+            </PrimaryCtaLink>
+            <Link
+              href="/#faq"
+              className="text-sm font-semibold text-[var(--color-accent)] underline-offset-2 hover:underline"
+            >
+              Read common questions first
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

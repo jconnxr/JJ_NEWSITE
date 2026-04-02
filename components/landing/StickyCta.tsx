@@ -1,9 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { PrimaryCtaLink } from "@/components/ui/primary-cta";
-import { BOOK_CALL_PATH, PHONE_TEL } from "@/lib/constants";
+import { BOOK_CALL_PATH, PHONE_TEL, SMS_URI } from "@/lib/constants";
 
 /** Mobile-only bar: quick path to call or book after the visitor has scrolled past the hero */
 export function StickyCta() {
@@ -33,13 +34,25 @@ export function StickyCta() {
           role="region"
           aria-label="Quick actions"
         >
-          <div className="mx-auto flex max-w-6xl gap-2 px-3">
-            <PrimaryCtaLink href={BOOK_CALL_PATH} className="min-h-[48px] flex-1 px-3 text-sm">
+          <div className="mx-auto flex max-w-6xl gap-1.5 px-2 sm:gap-2 sm:px-3">
+            <PrimaryCtaLink href={BOOK_CALL_PATH} className="min-h-[48px] min-w-0 flex-1 px-2 text-xs sm:px-3 sm:text-sm">
               Book a call
             </PrimaryCtaLink>
+            <Link
+              href="/#faq"
+              className="flex min-h-[48px] min-w-0 flex-1 items-center justify-center rounded-xl border border-[var(--color-border)] bg-paper px-1 text-[11px] font-semibold leading-tight text-[var(--color-accent)] sm:px-2 sm:text-xs"
+            >
+              FAQ
+            </Link>
+            <a
+              href={SMS_URI}
+              className="flex min-h-[48px] min-w-[2.75rem] shrink-0 items-center justify-center rounded-xl border border-[var(--color-border)] bg-paper px-1 text-[11px] font-semibold text-[var(--color-accent)] sm:min-w-[3.25rem] sm:text-xs"
+            >
+              Text
+            </a>
             <a
               href={PHONE_TEL}
-              className="flex min-h-[48px] min-w-[5.5rem] shrink-0 items-center justify-center rounded-xl border border-[var(--color-border)] bg-paper px-2 text-sm font-semibold text-[var(--color-accent)]"
+              className="flex min-h-[48px] min-w-[2.75rem] shrink-0 items-center justify-center rounded-xl border border-[var(--color-border)] bg-paper px-1 text-[11px] font-semibold text-[var(--color-accent)] sm:min-w-[3.25rem] sm:text-xs"
             >
               Call
             </a>

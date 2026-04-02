@@ -14,6 +14,7 @@ const people = [
     src: "/team-john.png",
     tel: JOHN_PHONE_TEL,
     telDisplay: JOHN_PHONE_DISPLAY,
+    bio: "Leads discovery and strategy—scope, priorities, and what to ship first. Your first calls often start with John so we align on goals, budget, and timeline before anything gets built.",
   },
   {
     name: "Jacob Foreman",
@@ -21,6 +22,7 @@ const people = [
     src: "/team-jacob.png",
     tel: JACOB_PHONE_TEL,
     telDisplay: JACOB_PHONE_DISPLAY,
+    bio: "Drives implementation—site structure, integrations, ads setup, and the technical details. Jacob makes sure what we promise in the call shows up in the build, with clear handoffs when you go live.",
   },
 ];
 
@@ -118,6 +120,7 @@ export function Team() {
                 <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-accent)]">
                   {person.role}
                 </p>
+                <p className="mt-4 text-sm leading-relaxed text-[var(--color-muted)]">{person.bio}</p>
                 <p className="mt-4">
                   <a
                     href={person.tel}

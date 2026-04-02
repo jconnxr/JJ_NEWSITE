@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { PrimaryCtaLink } from "@/components/ui/primary-cta";
-import { BOOK_CALL_PATH, CONTACT_MAILTO } from "@/lib/constants";
+import { BOOK_CALL_PATH, BOOKING_AVAILABILITY_NOTE, CONTACT_MAILTO } from "@/lib/constants";
 import { Reveal } from "@/components/motion/Reveal";
 import { ProductInquiryForm } from "./ProductInquiryForm";
 import { SectionFlowAccent } from "./SectionFlowAccent";
@@ -53,6 +53,7 @@ export function Contact() {
                 A focused conversation—usually 20–30 minutes—to understand your goals, timeline, and budget. We’ll
                 suggest what to prioritize first and whether we’re a fit. No pressure and no generic pitch deck.
               </p>
+              <p className="mt-3 text-sm font-medium text-[var(--color-ink-deep)]">{BOOKING_AVAILABILITY_NOTE}</p>
               <ul className="mt-5 space-y-2 text-sm text-[var(--color-ink)]/90">
                 <li className="flex gap-2">
                   <span className="text-[var(--color-accent)]" aria-hidden>

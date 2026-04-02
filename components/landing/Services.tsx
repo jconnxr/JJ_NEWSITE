@@ -1,39 +1,55 @@
 "use client";
 
 import type { ReactNode } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/motion/Reveal";
 import { IconAds, IconBooking, IconCrms, IconWebsites } from "./service-icons";
 import { SectionFlowAccent } from "./SectionFlowAccent";
 
 const services: {
+  id: string;
   title: string;
   description: string;
   icon: ReactNode;
+  exampleHref: string;
+  exampleLabel: string;
 }[] = [
   {
+    id: "service-websites",
     title: "Websites",
     description:
       "Fast, responsive sites that explain what you do and make the next step obvious—search-friendly and built to convert.",
     icon: <IconWebsites className="h-10 w-10" />,
+    exampleHref: "/work/red-dirt-roofing",
+    exampleLabel: "See a trades site example",
   },
   {
+    id: "service-crms",
     title: "CRMs",
     description:
       "Implementation and workflows so leads, contacts, and follow-ups live in one place your team will actually use.",
     icon: <IconCrms className="h-10 w-10" />,
+    exampleHref: "/work/summit-family-dental",
+    exampleLabel: "See a booking flow example",
   },
   {
+    id: "service-ads",
     title: "Ad campaigns",
     description:
       "Targeted campaigns aligned to your goals and budget, with reporting that answers whether it’s working.",
     icon: <IconAds className="h-10 w-10" />,
+    exampleHref: "/work/prairie-hvac-ads",
+    exampleLabel: "See an ads dashboard example",
   },
   {
+    id: "service-booking",
     title: "Booking & intake",
     description:
       "Flows and lightweight applications so customers can book, request a quote, or onboard without friction.",
     icon: <IconBooking className="h-10 w-10" />,
+    exampleHref: "/work/summit-family-dental",
+    exampleLabel: "See an intake example",
   },
 ];
 
@@ -65,6 +81,7 @@ export function Services() {
           {services.map((s, i) => (
             <motion.article
               key={s.title}
+              id={s.id}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-8% 0px" }}
@@ -75,10 +92,39 @@ export function Services() {
               <span className="mb-4 text-[var(--color-accent)]">{s.icon}</span>
               <h3 className="font-serif text-lg font-semibold text-[var(--color-ink-deep)]">{s.title}</h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--color-muted)]">{s.description}</p>
+              <div className="mt-5 flex flex-col gap-2 border-t border-[var(--color-border)]/60 pt-4">
+                <Link
+                  href={s.exampleHref}
+                  className="text-sm font-semibold text-[var(--color-accent)] underline-offset-2 hover:underline"
+                >
+                  {s.exampleLabel}
+                </Link>
+                <Link
+                  href="/#contact"
+                  className="text-sm font-medium text-[var(--color-muted)] hover:text-[var(--color-ink)]"
+                >
+                  Discuss this →
+                </Link>
+              </div>
               <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-transparent transition duration-300 group-hover:ring-[var(--color-accent)]/25" />
             </motion.article>
           ))}
         </div>
+
+        <p className="mt-10 text-center text-sm text-[var(--color-muted)]">
+          Industry pages:{" "}
+          <Link href="/oklahoma-city-restaurant-websites" className="font-semibold text-[var(--color-accent)] hover:underline">
+            Restaurants
+          </Link>
+          {" · "}
+          <Link href="/oklahoma-dental-practice-websites" className="font-semibold text-[var(--color-accent)] hover:underline">
+            Dental
+          </Link>
+          {" · "}
+          <Link href="/oklahoma-hvac-contractor-websites" className="font-semibold text-[var(--color-accent)] hover:underline">
+            HVAC
+          </Link>
+        </p>
       </div>
     </section>
   );

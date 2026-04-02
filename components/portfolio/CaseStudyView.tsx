@@ -59,7 +59,7 @@ export function CaseStudyView({ project }: Props) {
           href="/#portfolio"
           className="inline-flex min-h-12 items-center gap-2 text-base font-medium text-[var(--color-accent)] transition hover:text-[var(--color-ink-deep)] sm:text-sm"
         >
-          <span aria-hidden>←</span> Back to work samples
+          <span aria-hidden>←</span> Back to walkthroughs
         </Link>
 
         <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -77,6 +77,15 @@ export function CaseStudyView({ project }: Props) {
           {project.title}
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-[var(--color-muted)]">{project.excerpt}</p>
+
+        <div
+          className="mt-6 rounded-xl border border-[var(--color-gold)]/35 bg-[var(--color-gold)]/10 px-4 py-3 text-sm leading-relaxed text-[var(--color-ink)] sm:px-5 sm:py-4"
+          role="note"
+        >
+          <strong className="font-semibold text-[var(--color-ink-deep)]">Illustrative build: </strong>
+          This walkthrough uses a fictional brand to show structure and UX—it is not a paid client project. The patterns
+          reflect how we approach real engagements.
+        </div>
 
         <div className="mt-10 grid gap-6 rounded-2xl border border-[var(--color-border)] bg-paper/90 p-6 shadow-sm backdrop-blur sm:grid-cols-2 sm:p-8">
           <div>
@@ -149,7 +158,7 @@ export function CaseStudyView({ project }: Props) {
             href="/#portfolio"
             className="inline-flex min-h-[48px] w-full items-center justify-center rounded-xl border border-[var(--color-border)] bg-paper px-8 text-base font-semibold text-[var(--color-accent)] sm:w-auto sm:text-sm"
           >
-            More project samples
+            More walkthroughs
           </Link>
           <Link
             href="#preview-variants"
