@@ -63,12 +63,12 @@ export function Hero() {
         </motion.p>
         <motion.h1
           id="hero-heading"
-          className="mx-auto min-w-0 max-w-full text-balance break-words font-serif text-[clamp(1.625rem,5.2vw,2.25rem)] font-semibold leading-[1.12] tracking-tight text-[var(--color-ink-deep)] sm:text-5xl sm:tracking-tight lg:text-[3.25rem] lg:-tracking-[0.02em]"
+          className="mx-auto min-w-0 max-w-full text-pretty break-words font-serif text-[clamp(1.625rem,5.2vw,2.25rem)] font-semibold leading-[1.12] tracking-tight text-[var(--color-ink-deep)] sm:text-5xl sm:tracking-tight lg:text-[3.25rem] lg:-tracking-[0.02em]"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
         >
-          Turn more website visitors into booked work—without the jargon
+          Everything your business needs online — <span className="whitespace-nowrap">we build it, you own it</span>
         </motion.h1>
         <motion.p
           className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[var(--color-muted)] sm:text-lg"
