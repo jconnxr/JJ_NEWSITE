@@ -18,7 +18,6 @@ const Testimonials = dynamic(() => import("./Testimonials").then((m) => ({ defau
 const Team = dynamic(() => import("./Team").then((m) => ({ default: m.Team })));
 const Faq = dynamic(() => import("./Faq").then((m) => ({ default: m.Faq })));
 const Contact = dynamic(() => import("./Contact").then((m) => ({ default: m.Contact })));
-const ScrollEmailCapture = dynamic(() => import("./ScrollEmailCapture").then((m) => ({ default: m.ScrollEmailCapture })));
 
 export function Landing() {
   return (
@@ -47,7 +46,6 @@ export function Landing() {
         <Faq />
         <Contact />
       </main>
-      <ScrollEmailCapture />
       <StickyCta />
     </>
   );
