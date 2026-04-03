@@ -12,7 +12,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "Do you only work in Oklahoma?",
     answer:
-      "We’re based in Oklahoma City and built for Oklahoma businesses—metro, small towns, and statewide. If you’re nearby or operate primarily in-state, we’re a fit; reach out and we’ll confirm.",
+      "Oklahoma is our focus—we’re based in Oklahoma City and most of our work is for Oklahoma businesses, from the metro to small towns statewide. We can still help owners outside the state when it’s a good fit; reach out and we’ll talk through what you need.",
   },
   {
     question: "Can you work with what we already have (site, CRM, ads)?",
