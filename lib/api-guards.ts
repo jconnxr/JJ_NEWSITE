@@ -203,3 +203,105 @@ export function parseBookCallPayload(body: unknown): ParsedBookCall | NextRespon
     preferredDate,
   };
 }
+
+const PREVIEW_LEAD_LIMITS = {
+  name: 150,
+  email: 254,
+  phone: 60,
+  businessName: 200,
+  notes: 4000,
+  shareToken: 14_000,
+} as const;
+
+export type ParsedPreviewLead = {
+  name: string;
+  email: string;
+  phone: string;
+  businessName: string;
+  notes: string;
+  categoryId: string;
+  nicheId: string;
+  nicheLabel: string;
+  templateId: string;
+  layoutId: string;
+  paletteId: string;
+  shareToken: string;
+};
+
+export function parsePreviewLeadPayload(body: unknown): ParsedPreviewLead | NextResponse {
+  if (!body || typeof body !== "object") {
+    return NextResponse.json({ error: "Invalid request" }, { status: 400 });
+  }
+  const o = body as Record<string, unknown>;
+  const fax = typeof o.fax === "string" ? o.fax : "";
+  if (fax.trim()) {
+    return NextResponse.json({ ok: true });
+  }
+
+  const name = typeof o.name === "string" ? o.name.trim() : "";
+  const email = typeof o.email === "string" ? o.email.trim() : "";
+  const phone = typeof o.phone === "string" ? o.phone.trim() : "";
+  const businessName = typeof o.businessName === "string" ? o.businessName.trim() : "";
+  const notes = typeof o.notes === "string" ? o.notes.trim() : "";
+  const categoryId = typeof o.categoryId === "string" ? o.categoryId.trim() : "";
+  const nicheId = typeof o.nicheId === "string" ? o.nicheId.trim() : "";
+  const nicheLabel = typeof o.nicheLabel === "string" ? o.nicheLabel.trim() : "";
+  const templateId = typeof o.templateId === "string" ? o.templateId.trim() : "";
+  const layoutId =
+    typeof o.layoutId === "string"
+      ? o.layoutId.trim()
+      : typeof o.archetypeId === "string"
+        ? o.archetypeId.trim()
+        : "";
+  const paletteId = typeof o.paletteId === "string" ? o.paletteId.trim() : "";
+  const shareToken = typeof o.shareToken === "string" ? o.shareToken.trim() : "";
+
+  if (!name || !email || !businessName) {
+    return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+  }
+
+  const L = PREVIEW_LEAD_LIMITS;
+  if (name.length > L.name) {
+    return NextResponse.json({ error: `Name must be at most ${L.name} characters` }, { status: 400 });
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > L.email) {
+    return NextResponse.json({ error: "Invalid email" }, { status: 400 });
+  }
+  if (phone.length > L.phone) {
+    return NextResponse.json({ error: "Phone too long" }, { status: 400 });
+  }
+  if (businessName.length > L.businessName) {
+    return NextResponse.json({ error: "Business name too long" }, { status: 400 });
+  }
+  if (notes.length > L.notes) {
+    return NextResponse.json({ error: "Notes too long" }, { status: 400 });
+  }
+  if (
+    categoryId.length > 24 ||
+    nicheId.length > 80 ||
+    nicheLabel.length > 120 ||
+    templateId.length > 24 ||
+    layoutId.length > 80 ||
+    paletteId.length > 40
+  ) {
+    return NextResponse.json({ error: "Invalid preview fields" }, { status: 400 });
+  }
+  if (shareToken.length > L.shareToken) {
+    return NextResponse.json({ error: "Invalid share payload" }, { status: 400 });
+  }
+
+  return {
+    name: sanitizeSingleLineField(name),
+    email,
+    phone: sanitizeSingleLineField(phone),
+    businessName: sanitizeSingleLineField(businessName),
+    notes,
+    categoryId,
+    nicheId,
+    nicheLabel,
+    templateId,
+    layoutId,
+    paletteId,
+    shareToken,
+  };
+}

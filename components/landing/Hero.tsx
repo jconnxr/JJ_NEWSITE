@@ -8,6 +8,7 @@ import {
   GOOGLE_REVIEWS_URL,
   PHONE_DISPLAY,
   PHONE_TEL,
+  PREVIEW_PATH,
   RESPONSE_TIME,
   SERVICE_AREA,
 } from "@/lib/constants";
@@ -92,10 +93,10 @@ export function Hero() {
             Book a conversation
           </PrimaryCtaLink>
           <Link
-            href="/#faq"
+            href={PREVIEW_PATH}
             className="inline-flex min-h-[48px] w-full items-center justify-center rounded-xl border border-[var(--color-border)] bg-paper/90 px-7 text-base font-semibold text-[var(--color-accent)] backdrop-blur-sm transition hover:border-[var(--color-accent)]/35 hover:bg-paper sm:w-auto sm:text-sm"
           >
-            Get a free plan →
+            See your site now →
           </Link>
         </motion.div>
 

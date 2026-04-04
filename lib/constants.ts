@@ -1,6 +1,9 @@
 /** In-app scheduling page (sends email via /api/book-call) */
 export const BOOK_CALL_PATH = "/book-call";
 
+/** Interactive site preview builder funnel */
+export const PREVIEW_PATH = "/preview";
+
 /** Replace with your business email */
 export const CONTACT_MAILTO =
   "mailto:hello@example.com?subject=Meeting%20with%20J%26J%20Management%20Solutions";

@@ -33,6 +33,26 @@ export function Portfolio() {
           </p>
         </Reveal>
 
+        <Reveal delay={0.1}>
+          <div className="mt-8 rounded-2xl border border-[var(--color-accent)]/25 bg-[var(--color-navy-deep)]/40 p-6 sm:flex sm:items-center sm:justify-between sm:gap-6">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-gold)]">Try your own</p>
+              <p className="mt-2 font-serif text-xl font-semibold text-[var(--color-ink-deep)]">
+                Preview a site tailored to your industry
+              </p>
+              <p className="mt-2 max-w-xl text-sm text-[var(--color-muted)]">
+                Not a case study—a quick builder with layouts, colors, and your business name. Parallel to the work below.
+              </p>
+            </div>
+            <Link
+              href="/preview"
+              className="mt-4 inline-flex min-h-12 shrink-0 items-center justify-center rounded-xl bg-[var(--color-accent)] px-6 font-semibold text-[var(--color-navy)] sm:mt-0"
+            >
+              Open preview builder
+            </Link>
+          </div>
+        </Reveal>
+
         <div className="mt-14 grid gap-8 sm:grid-cols-2">
           {projects.map((p, i) => (
             <motion.div

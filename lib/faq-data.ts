@@ -5,6 +5,11 @@ export type FaqItem = {
 
 export const faqItems: FaqItem[] = [
   {
+    question: "Can I preview what my website might look like before we talk?",
+    answer:
+      "Yes. Use the site preview builder (Preview in the menu): choose Products, Services, or Restaurants, then your specific business type, customize copy and colors, and see an illustrative mock—it’s not a final site, but it helps you picture direction. You can share the link with your team or send us your interest from that page.",
+  },
+  {
     question: "How long does a typical website or systems project take?",
     answer:
       "Almost every install goes live in under a week unless the work is unusually complex—think heavy custom integrations, large migrations, or multi-system rollouts. In those cases we’ll spell out why and what to expect. Your overall timeline still depends on scope, approvals, and how quickly you can share assets—we’ll give you a clear range on the discovery call.",

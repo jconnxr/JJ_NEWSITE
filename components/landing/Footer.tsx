@@ -11,6 +11,9 @@ export function Footer() {
           <strong>J&J Management Solutions</strong> · Oklahoma
         </p>
         <nav className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs font-semibold sm:text-sm">
+          <Link href="/preview" className="text-[var(--color-accent)] hover:underline">
+            Preview builder
+          </Link>
           <Link href="/pricing" className="text-[var(--color-accent)] hover:underline">
             Pricing
           </Link>

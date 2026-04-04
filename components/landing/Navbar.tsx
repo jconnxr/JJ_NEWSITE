@@ -11,6 +11,7 @@ const links = [
   { href: "/why-online", label: "Why online" },
   { href: "/#services", label: "Services" },
   { href: "/#portfolio", label: "Work" },
+  { href: "/preview", label: "Preview" },
   { href: "/pricing", label: "Pricing" },
   { href: "/#faq", label: "FAQ" },
   { href: "/#team", label: "Team" },
