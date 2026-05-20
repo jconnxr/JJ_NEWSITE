@@ -20,13 +20,14 @@ export function About() {
             id="about-heading"
             className="font-serif text-3xl font-semibold tracking-tight text-[var(--color-ink-deep)] sm:text-4xl lg:tracking-tight"
           >
-            About John Conner
+            A local partner for your online presence
           </h2>
         </Reveal>
         <Reveal delay={0.06}>
-          <p className="mt-4 max-w-2xl text-lg text-[var(--color-muted)]">
-            John runs J&amp;J Management Solutions from Oklahoma City—websites, systems, and ads for small businesses,
-            in plain language, with direct access from first call through launch.
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[var(--color-muted)]">
+            <span className="font-medium text-[var(--color-ink)]">John Conner</span> leads J&amp;J Management Solutions
+            from Oklahoma City. We work with local owners who want a credible website, steadier leads, and the digital
+            side of the business under control—without agency runaround or jargon you have to decode later.
           </p>
         </Reveal>
 
@@ -48,10 +49,13 @@ export function About() {
               />
             </div>
             <div className="flex flex-col justify-center p-6 sm:p-8 md:p-10">
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-accent)]">Owner</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-accent)]">
+                John Conner · Owner
+              </p>
               <p className="mt-4 text-sm leading-relaxed text-[var(--color-muted)] sm:text-base">
-                John handles discovery, strategy, and delivery—scope, site builds, integrations, ads setup, and what to
-                ship first. You work with the same person who answers the phone and does the work.
+                John helps you figure out what matters online first—then builds or fixes the site, tightens how leads
+                reach you, and sets up ads and tools that fit a local business (not a corporate playbook). From the first
+                call through launch, you work with the same person who answers the phone and does the work.
               </p>
               <p className="mt-4">
                 <a
@@ -67,20 +71,25 @@ export function About() {
 
         <Reveal delay={0.1}>
           <div className="mt-12 rounded-2xl border border-[var(--color-border)] bg-paper/95 p-6 shadow-sm sm:p-8">
-            <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-[var(--color-muted)]">How we work</h3>
+            <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-[var(--color-muted)]">
+              What local owners get
+            </h3>
             <div className="mt-4 max-w-3xl space-y-4 text-sm leading-relaxed text-[var(--color-ink)] sm:text-base">
               <p>
-                J&amp;J is based in Oklahoma City with a simple focus: make the online side of running a business feel
-                understandable—not a maze of jargon, dashboards, and vendors you never meet.
+                Most owners we meet aren&apos;t behind because they don&apos;t care—they&apos;re behind because the
+                online side piled up: an outdated site, scattered reviews, leads lost in texts and voicemails, ads that
+                never quite paid off. We focus on the basics that move the needle: look trustworthy when someone Googles
+                you, make it easy to call or book, and keep follow-up from falling through the cracks.
               </p>
               <p>
-                Whether you&apos;re in a small town or the metro, we help your business thrive online with websites,
-                systems, and ads you can actually use—no layers, no distant &ldquo;support team,&rdquo; just clear answers
-                and follow-through on what we agree to in the call.
+                Whether you&apos;re in a small town or the Oklahoma City metro, you get practical help in plain
+                language—websites, CRMs, and advertising wired together so your online presence supports how you actually
+                run the business. We scope honestly, ship in focused phases, and don&apos;t disappear after launch.
               </p>
               <p>
-                We run our business as a Christian company. Our faith shapes how we treat people, tell the truth, and
-                steward what you trust us with: your time, your budget, and your reputation online.
+                J&amp;J is a Christian company. That means straight answers, fair pricing, and treating your reputation
+                online like something worth protecting—because for local businesses, what people see and read about you
+                often happens before you ever shake hands.
               </p>
             </div>
           </div>
