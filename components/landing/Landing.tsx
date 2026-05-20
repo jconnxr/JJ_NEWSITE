@@ -15,7 +15,7 @@ const Process = dynamic(() => import("./Process").then((m) => ({ default: m.Proc
 const Portfolio = dynamic(() => import("./Portfolio").then((m) => ({ default: m.Portfolio })));
 const Services = dynamic(() => import("./Services").then((m) => ({ default: m.Services })));
 const Testimonials = dynamic(() => import("./Testimonials").then((m) => ({ default: m.Testimonials })));
-const Team = dynamic(() => import("./Team").then((m) => ({ default: m.Team })));
+const About = dynamic(() => import("./About").then((m) => ({ default: m.About })));
 const Faq = dynamic(() => import("./Faq").then((m) => ({ default: m.Faq })));
 const Contact = dynamic(() => import("./Contact").then((m) => ({ default: m.Contact })));
 
@@ -42,7 +42,7 @@ export function Landing() {
         <Portfolio />
         <Services />
         <Testimonials />
-        <Team />
+        <About />
         <Faq />
         <Contact />
       </main>
