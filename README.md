@@ -61,7 +61,7 @@ The home page includes a **Work** section (`#portfolio`) linking to full case-st
 
 ## Assets
 
-Place brand images in [`public/`](public/) (`logo.png`, `team-john.png`, `team-jacob.png`).
+Place brand images in [`public/`](public/) (`logo.png`, `team-john.png`).
 
 ## Lint
 

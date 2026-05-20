@@ -8,13 +8,11 @@ export const PREVIEW_PATH = "/preview";
 export const CONTACT_MAILTO =
   "mailto:hello@example.com?subject=Meeting%20with%20J%26J%20Management%20Solutions";
 
-/** Individual lines — team section; hero/footer/sticky use John’s number as the primary “call us” line */
+/** Primary line — hero, team, footer, sticky bar, chat, portfolio mocks */
 export const JOHN_PHONE_TEL = "tel:+14053123681";
 export const JOHN_PHONE_DISPLAY = "(405) 312-3681";
-export const JACOB_PHONE_TEL = "tel:+14056530112";
-export const JACOB_PHONE_DISPLAY = "(405) 653-0112";
 
-/** Primary click-to-call (John) — hero, footer, sticky bar, portfolio mocks */
+/** Primary click-to-call */
 export const PHONE_TEL = JOHN_PHONE_TEL;
 export const PHONE_DISPLAY = JOHN_PHONE_DISPLAY;
 

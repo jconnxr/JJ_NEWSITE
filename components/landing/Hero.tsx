@@ -78,7 +78,7 @@ export function Hero() {
           transition={{ duration: 0.55, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
         >
           We help Oklahoma businesses look credible online, capture leads, and close the loop with CRMs, ads, and
-          booking tools—new builds or fixes to what you already have. You work directly with both of us, in plain language.
+          booking tools—new builds or fixes to what you already have. You work directly with us, in plain language—no layers or runaround.
         </motion.p>
         <motion.div
           className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap"

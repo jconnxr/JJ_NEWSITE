@@ -20,7 +20,7 @@ export const testimonials: Testimonial[] = [
     rating: 5,
   },
   {
-    quote: "No runaround. We talk to the same two people every time, and follow-up is fast.",
+    quote: "No runaround. We talk to the same person every time, and follow-up is fast.",
     name: "Small business operator",
     role: "Central Oklahoma",
     rating: 5,

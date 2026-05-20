@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   title: "J&J Management Solutions | Oklahoma City Websites, Systems & Ads",
   description:
-    "Oklahoma City–based partners for small-business websites, CRMs, Google-style ads, and booking flows. John Conner and Jacob Foreman—plain language, statewide and OKC metro.",
+    "Oklahoma City–based websites, CRMs, Google-style ads, and booking flows for small businesses. Led by John Conner—plain language, statewide and OKC metro.",
   keywords: [
     "Oklahoma City web design",
     "Oklahoma City website",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "J&J Management Solutions | Oklahoma City Websites, Systems & Ads",
     description:
-      "Websites, CRMs, and ads for Oklahoma businesses—two OKC co-founders, no runaround.",
+      "Websites, CRMs, and ads for Oklahoma businesses—OKC-based, owner-led, no runaround.",
     images: ["/logo.png"],
   },
 };

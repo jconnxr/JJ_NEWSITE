@@ -17,7 +17,11 @@ export function LocalBusinessJsonLd() {
     url,
     telephone: telephoneE164(PHONE_TEL),
     description:
-      "Websites, CRMs, advertising, and booking tools for Oklahoma small businesses—plain language, direct access to co-founders John Conner and Jacob Foreman.",
+      "Websites, CRMs, advertising, and booking tools for Oklahoma small businesses—plain language, direct access to owner John Conner.",
+    founder: {
+      "@type": "Person",
+      name: "John Conner",
+    },
     areaServed: [
       { "@type": "City", name: "Oklahoma City", containedInPlace: { "@type": "State", name: "Oklahoma" } },
       { "@type": "State", name: "Oklahoma" },

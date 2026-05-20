@@ -4,40 +4,20 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/motion/Reveal";
 import { SectionFlowAccent } from "./SectionFlowAccent";
-import { JACOB_PHONE_DISPLAY, JACOB_PHONE_TEL, JOHN_PHONE_DISPLAY, JOHN_PHONE_TEL } from "@/lib/constants";
+import { JOHN_PHONE_DISPLAY, JOHN_PHONE_TEL } from "@/lib/constants";
 import { getSafeTeamVideoEmbedSrc } from "@/lib/team-embed-url";
-
-const people = [
-  {
-    name: "John Conner",
-    role: "Co-founder",
-    src: "/team-john.png",
-    tel: JOHN_PHONE_TEL,
-    telDisplay: JOHN_PHONE_DISPLAY,
-    bio: "Leads discovery and strategy—scope, priorities, and what to ship first. Your first calls often start with John so we align on goals, budget, and timeline before anything gets built.",
-  },
-  {
-    name: "Jacob Foreman",
-    role: "Co-founder",
-    src: "/team-jacob.png",
-    tel: JACOB_PHONE_TEL,
-    telDisplay: JACOB_PHONE_DISPLAY,
-    bio: "Drives implementation—site structure, integrations, ads setup, and the technical details. Jacob makes sure what we promise in the call shows up in the build, with clear handoffs when you go live.",
-  },
-];
 
 const sharedBio = (
   <>
     <p>
-      We’re both from Oklahoma City, and our partnership is built on a friendship that goes back to childhood—long before
-      we ever started a company. That same trust is what we bring to our work today, with a simple dream: make the online
-      side of running a business feel understandable—not a maze of jargon, dashboards, and vendors you never meet. Too
-      many owners feel behind before they even start; we show up to change that.
+      We’re based in Oklahoma City with a simple focus: make the online side of running a business feel
+      understandable—not a maze of jargon, dashboards, and vendors you never meet. Too many owners feel behind before
+      they even start; we show up to change that.
     </p>
     <p className="mt-4">
       Whether you’re in a small town or the metro, we want your business to thrive online with websites, systems, and
-      ads you can actually use. You’ll work directly with both of us—no layers, no distant “support team,” just two people
-      who answer the phone, explain things in plain language, and care about your outcomes as much as you do.
+      ads you can actually use. You’ll work directly with us—no layers, no distant “support team”—just clear answers in
+      plain language and follow-through on what we agree to in the call.
     </p>
     <p className="mt-4">
       We run our business as a Christian company. Our faith isn’t a label we tack on—it shapes how we treat people, tell
@@ -64,13 +44,13 @@ export function Team() {
             id="team-heading"
             className="font-serif text-3xl font-semibold tracking-tight text-[var(--color-ink-deep)] sm:text-4xl lg:tracking-tight"
           >
-            The people you’ll actually talk to
+            Who you&apos;ll work with
           </h2>
         </Reveal>
         <Reveal delay={0.06}>
           <p className="mt-4 max-w-2xl text-lg text-[var(--color-muted)]">
-            Real people from Oklahoma—here to help your business grow online without the confusion. Call either of us;
-            we’re not a call center, and we’re not going anywhere.
+            John Conner leads J&amp;J from Oklahoma City—here to help your business grow online without the confusion.
+            Call or text directly; we&apos;re not a call center, and we&apos;re not going anywhere.
           </p>
         </Reveal>
 
@@ -80,7 +60,7 @@ export function Team() {
               <div className="aspect-video w-full">
                 <iframe
                   src={teamVideoSrc}
-                  title="Welcome from John and Jacob — J&J Management Solutions"
+                  title="Welcome from John Conner — J&J Management Solutions"
                   className="h-full w-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
@@ -90,54 +70,52 @@ export function Team() {
           </Reveal>
         ) : null}
 
-        <div className="mt-14 grid gap-8 md:grid-cols-2 md:gap-10">
-          {people.map((person, i) => (
-            <motion.article
-              key={person.name}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-8% 0px" }}
-              transition={{ duration: 0.55, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-              className="group overflow-hidden rounded-3xl border border-[var(--color-border)] bg-paper shadow-xl shadow-black/40"
+        <motion.article
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-8% 0px" }}
+          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+          className="mx-auto mt-14 max-w-md overflow-hidden rounded-3xl border border-[var(--color-border)] bg-paper shadow-xl shadow-black/40"
+        >
+          <motion.div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-surface-alt)]">
+            <motion.div
+              className="absolute inset-0"
+              whileHover={{ scale: 1.045 }}
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-surface-alt)]">
-                <motion.div
-                  className="absolute inset-0"
-                  whileHover={{ scale: 1.045 }}
-                  transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  <Image
-                    src={person.src}
-                    alt={`${person.name}, ${person.role} at J&J Management Solutions`}
-                    fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </motion.div>
-              </div>
-              <div className="p-6 sm:p-8">
-                <h3 className="font-serif text-xl font-semibold text-[var(--color-ink-deep)]">{person.name}</h3>
-                <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-accent)]">
-                  {person.role}
-                </p>
-                <p className="mt-4 text-sm leading-relaxed text-[var(--color-muted)]">{person.bio}</p>
-                <p className="mt-4">
-                  <a
-                    href={person.tel}
-                    className="text-base font-semibold text-[var(--color-accent)] underline-offset-2 hover:underline"
-                  >
-                    {person.telDisplay}
-                  </a>
-                </p>
-              </div>
-            </motion.article>
-          ))}
-        </div>
+              <Image
+                src="/team-john.png"
+                alt="John Conner, owner of J&J Management Solutions"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 28rem"
+              />
+            </motion.div>
+          </motion.div>
+          <div className="p-6 sm:p-8">
+            <h3 className="font-serif text-xl font-semibold text-[var(--color-ink-deep)]">John Conner</h3>
+            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-accent)]">Owner</p>
+            <p className="mt-4 text-sm leading-relaxed text-[var(--color-muted)]">
+              John leads discovery, strategy, and delivery—scope, site builds, integrations, ads setup, and what to ship
+              first. From the first call through launch, you work with the same person who does the work.
+            </p>
+            <p className="mt-4">
+              <a
+                href={JOHN_PHONE_TEL}
+                className="text-base font-semibold text-[var(--color-accent)] underline-offset-2 hover:underline"
+              >
+                {JOHN_PHONE_DISPLAY}
+              </a>
+            </p>
+          </div>
+        </motion.article>
 
         <Reveal delay={0.1}>
           <div className="mt-12 rounded-2xl border border-[var(--color-border)] bg-paper/95 p-6 shadow-sm sm:p-8">
             <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-[var(--color-muted)]">Our story</h3>
-            <div className="mt-4 max-w-3xl text-sm leading-relaxed text-[var(--color-ink)] sm:text-base">{sharedBio}</div>
+            <div className="mt-4 max-w-3xl text-sm leading-relaxed text-[var(--color-ink)] sm:text-base">
+              {sharedBio}
+            </div>
           </div>
         </Reveal>
       </div>
