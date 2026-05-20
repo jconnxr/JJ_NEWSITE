@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { Reveal } from "@/components/motion/Reveal";
 import { SectionFlowAccent } from "./SectionFlowAccent";
 import { JOHN_PHONE_DISPLAY, JOHN_PHONE_TEL } from "@/lib/constants";
-import { getSafeTeamVideoEmbedSrc } from "@/lib/team-embed-url";
 
 const sharedBio = (
   <>
@@ -29,8 +28,6 @@ const sharedBio = (
 );
 
 export function Team() {
-  const teamVideoSrc = getSafeTeamVideoEmbedSrc(process.env.NEXT_PUBLIC_TEAM_VIDEO_URL);
-
   return (
     <section
       id="team"
@@ -53,22 +50,6 @@ export function Team() {
             Call or text directly; we&apos;re not a call center, and we&apos;re not going anywhere.
           </p>
         </Reveal>
-
-        {teamVideoSrc ? (
-          <Reveal delay={0.08}>
-            <div className="mt-12 overflow-hidden rounded-2xl border border-[var(--color-border)] bg-black/20 shadow-lg shadow-black/30">
-              <div className="aspect-video w-full">
-                <iframe
-                  src={teamVideoSrc}
-                  title="Welcome from John Conner — J&J Management Solutions"
-                  className="h-full w-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-              </div>
-            </div>
-          </Reveal>
-        ) : null}
 
         <motion.article
           initial={{ opacity: 0, y: 24 }}
