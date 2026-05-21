@@ -6,15 +6,15 @@ import { getSiteUrl } from "@/lib/site-url";
 const path = "/preview";
 
 export const metadata: Metadata = {
-  title: "Site preview builder | J&J Management Solutions",
+  title: "Site preview builder | Conner Digital",
   description:
     "Pick an industry and layout, customize copy and colors, and see an illustrative website preview for your Oklahoma business.",
   alternates: { canonical: path },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Site preview builder | J&J Management Solutions",
+    title: "Site preview builder | Conner Digital",
     url: `${getSiteUrl()}${path}`,
-    siteName: "J&J Management Solutions",
+    siteName: "Conner Digital",
     locale: "en_US",
     type: "website",
   },

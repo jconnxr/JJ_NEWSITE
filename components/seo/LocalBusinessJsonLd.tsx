@@ -13,7 +13,7 @@ export function LocalBusinessJsonLd() {
   const payload = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: "J&J Management Solutions",
+    name: "Conner Digital",
     url,
     telephone: telephoneE164(PHONE_TEL),
     description:

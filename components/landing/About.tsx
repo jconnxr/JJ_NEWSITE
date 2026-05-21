@@ -25,7 +25,7 @@ export function About() {
         </Reveal>
         <Reveal delay={0.06}>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[var(--color-muted)]">
-            <span className="font-medium text-[var(--color-ink)]">John Conner</span> leads J&amp;J Management Solutions
+            <span className="font-medium text-[var(--color-ink)]">John Conner</span> runs Conner Digital
             from Oklahoma City. We work with local owners who want a credible website, steadier leads, and the digital
             side of the business under control—without agency runaround or jargon you have to decode later.
           </p>
@@ -87,7 +87,7 @@ export function About() {
                 run the business. We scope honestly, ship in focused phases, and don&apos;t disappear after launch.
               </p>
               <p>
-                J&amp;J is a Christian company. That means straight answers, fair pricing, and treating your reputation
+                Conner Digital is a Christian company. That means straight answers, fair pricing, and treating your reputation
                 online like something worth protecting—because for local businesses, what people see and read about you
                 often happens before you ever shake hands.
               </p>

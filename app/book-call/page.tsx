@@ -4,7 +4,7 @@ import Image from "next/image";
 import { BookCallForm } from "./BookCallForm";
 
 export const metadata: Metadata = {
-  title: "Schedule a call | J&J Management Solutions",
+  title: "Schedule a call | Conner Digital",
   description: "Pick a day and share your details—we’ll follow up to confirm a time.",
   robots: { index: true, follow: true },
 };
@@ -15,10 +15,10 @@ export default function BookCallPage() {
       <header className="border-b border-[var(--color-border)]/90 bg-[var(--color-cream)]/95 pt-[env(safe-area-inset-top,0px)] backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6 sm:py-4">
           <Link href="/" className="flex min-h-12 min-w-0 items-center gap-2 text-sm font-medium sm:min-h-14">
-            <span className="sr-only">J&amp;J Management Solutions — Home</span>
+            <span className="sr-only">Conner Digital — Home</span>
             <Image
               src="/logo-wordmark.png"
-              alt=""
+              alt="Conner Digital"
               width={400}
               height={110}
               className="h-12 w-auto max-w-[min(300px,68vw)] shrink-0 object-contain object-left sm:h-[3.75rem] sm:max-w-[min(400px,48vw)]"

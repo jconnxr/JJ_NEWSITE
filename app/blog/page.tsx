@@ -9,14 +9,14 @@ import { getSiteUrl } from "@/lib/site-url";
 const path = "/blog";
 
 export const metadata: Metadata = {
-  title: "Resources | J&J Management Solutions",
+  title: "Resources | Conner Digital",
   description: "Practical notes on websites, reviews, and online presence for Oklahoma small businesses.",
   alternates: { canonical: path },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Resources | J&J Management Solutions",
+    title: "Resources | Conner Digital",
     url: `${getSiteUrl()}${path}`,
-    siteName: "J&J Management Solutions",
+    siteName: "Conner Digital",
     locale: "en_US",
     type: "website",
   },

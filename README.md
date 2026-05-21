@@ -1,4 +1,4 @@
-# J&J Management Solutions — landing site
+# Conner Digital — landing site
 
 A **Next.js 15** (App Router) marketing site with **React 19**, **Framer Motion**, and **Tailwind CSS v4**. It is designed to feel modern and interactive—scroll-linked navigation, staged section reveals, and motion on hero, cards, and CTAs—while staying fast and deployable as static output where appropriate.
 

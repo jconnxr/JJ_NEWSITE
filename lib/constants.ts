@@ -6,7 +6,7 @@ export const PREVIEW_PATH = "/preview";
 
 /** Replace with your business email */
 export const CONTACT_MAILTO =
-  "mailto:hello@example.com?subject=Meeting%20with%20J%26J%20Management%20Solutions";
+  "mailto:john@connerdigital.com?subject=Meeting%20with%20Conner%20Digital";
 
 /** Primary line — hero, team, footer, sticky bar, chat, portfolio mocks */
 export const JOHN_PHONE_TEL = "tel:+14053123681";

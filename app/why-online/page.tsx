@@ -11,24 +11,24 @@ import { whyOnlineGroups, whyOnlineSources } from "@/lib/why-online-stats";
 const path = "/why-online";
 
 export const metadata: Metadata = {
-  title: "Why a strong online presence matters | J&J Management Solutions",
+  title: "Why a strong online presence matters | Conner Digital",
   description:
     "Research-backed reasons Oklahoma businesses benefit from search visibility, reviews, a credible website, and a mobile-friendly experience—without the hype.",
   alternates: { canonical: path },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Why a strong online presence matters | J&J Management Solutions",
+    title: "Why a strong online presence matters | Conner Digital",
     description:
       "What national consumer and platform research says about local search, reviews, and how customers evaluate businesses online.",
     url: `${getSiteUrl()}${path}`,
-    siteName: "J&J Management Solutions",
+    siteName: "Conner Digital",
     locale: "en_US",
     type: "article",
-    images: [{ url: "/logo.png", width: 1200, height: 630, alt: "J&J Management Solutions" }],
+    images: [{ url: "/logo.png", width: 1024, height: 537, alt: "Conner Digital" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Why a strong online presence matters | J&J Management Solutions",
+    title: "Why a strong online presence matters | Conner Digital",
     description:
       "Local search, reviews, and site experience—what the data suggests for businesses in Oklahoma and beyond.",
     images: ["/logo.png"],

@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return { title: "Article" };
   const path = `/blog/${slug}`;
   return {
-    title: `${post.title} | J&J Management Solutions`,
+    title: `${post.title} | Conner Digital`,
     description: post.excerpt,
     alternates: { canonical: path },
     robots: { index: true, follow: true },
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: post.title,
       description: post.excerpt,
       url: `${getSiteUrl()}${path}`,
-      siteName: "J&J Management Solutions",
+      siteName: "Conner Digital",
       locale: "en_US",
       type: "article",
     },

@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/logo.png",
   },
-  title: "J&J Management Solutions | Oklahoma City Websites, Systems & Ads",
+  title: "Conner Digital | Oklahoma City Websites, Systems & Ads",
   description:
     "Oklahoma City–based websites, CRMs, Google-style ads, and booking flows for small businesses. Led by John Conner—plain language, statewide and OKC metro.",
   keywords: [
@@ -47,18 +47,18 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "J&J Management Solutions | Oklahoma City Websites, Systems & Ads",
+    title: "Conner Digital | Oklahoma City Websites, Systems & Ads",
     description:
       "Websites, systems, and ads for Oklahoma businesses—based in Oklahoma City, serving the metro and small towns statewide.",
     url: site,
-    siteName: "J&J Management Solutions",
+    siteName: "Conner Digital",
     locale: "en_US",
     type: "website",
-    images: [{ url: "/logo.png", width: 1200, height: 630, alt: "J&J Management Solutions" }],
+    images: [{ url: "/logo.png", width: 1024, height: 537, alt: "Conner Digital" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "J&J Management Solutions | Oklahoma City Websites, Systems & Ads",
+    title: "Conner Digital | Oklahoma City Websites, Systems & Ads",
     description:
       "Websites, CRMs, and ads for Oklahoma businesses—OKC-based, owner-led, no runaround.",
     images: ["/logo.png"],

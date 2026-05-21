@@ -66,18 +66,18 @@ export function Navbar() {
             className="group flex shrink-0 items-center justify-start no-underline"
             onClick={() => setMenuOpen(false)}
           >
-            <span className="sr-only">J&amp;J Management Solutions — Home</span>
+            <span className="sr-only">Conner Digital — Home</span>
             <motion.div
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 24 }}
             >
               <Image
-                src="/logo-wordmark.png"
-                alt=""
-                width={400}
-                height={110}
-                className="h-11 w-auto max-w-[min(200px,48vw)] object-contain object-left sm:h-12 sm:max-w-[min(260px,42vw)] md:h-[3.5rem] md:max-w-[min(320px,36vw)]"
+                src="/conner-digital-wordmark.png"
+                alt="Conner Digital"
+                width={1024}
+                height={537}
+                className="h-10 w-auto max-w-[min(220px,52vw)] object-contain object-left sm:h-11 sm:max-w-[min(280px,44vw)] md:h-12 md:max-w-[min(340px,38vw)]"
                 priority
               />
             </motion.div>

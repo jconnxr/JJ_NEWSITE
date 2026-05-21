@@ -10,15 +10,15 @@ import { getSiteUrl } from "@/lib/site-url";
 const path = "/website-hosting";
 
 export const metadata: Metadata = {
-  title: "Website hosting option | J&J Management Solutions",
+  title: "Website hosting option | Conner Digital",
   description:
     "Optional hosting and care for the custom site we build for you—Oklahoma small businesses. Plain-language overview before you decide.",
   alternates: { canonical: path },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Website hosting option | J&J Management Solutions",
+    title: "Website hosting option | Conner Digital",
     url: `${getSiteUrl()}${path}`,
-    siteName: "J&J Management Solutions",
+    siteName: "Conner Digital",
     locale: "en_US",
     type: "website",
   },

@@ -5,16 +5,16 @@ import { getSiteUrl } from "@/lib/site-url";
 const path = "/oklahoma-hvac-contractor-websites";
 
 export const metadata: Metadata = {
-  title: "Oklahoma HVAC contractor websites & ads | J&J Management Solutions",
+  title: "Oklahoma HVAC contractor websites & ads | Conner Digital",
   description:
     "Lead-focused sites and campaigns for Oklahoma HVAC—storm season, service areas, and clear emergency CTAs.",
   alternates: { canonical: path },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Oklahoma HVAC contractor websites & ads | J&J Management Solutions",
+    title: "Oklahoma HVAC contractor websites & ads | Conner Digital",
     description: "Websites and ad programs for Oklahoma HVAC and home services contractors.",
     url: `${getSiteUrl()}${path}`,
-    siteName: "J&J Management Solutions",
+    siteName: "Conner Digital",
     locale: "en_US",
     type: "website",
   },

@@ -10,15 +10,15 @@ import { getSiteUrl } from "@/lib/site-url";
 const path = "/pricing";
 
 export const metadata: Metadata = {
-  title: "Pricing & packages | J&J Management Solutions",
+  title: "Pricing & packages | Conner Digital",
   description:
     "Starting ranges for Oklahoma small-business websites, systems, and ads—book a call to scope something custom.",
   alternates: { canonical: path },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Pricing & packages | J&J Management Solutions",
+    title: "Pricing & packages | Conner Digital",
     url: `${getSiteUrl()}${path}`,
-    siteName: "J&J Management Solutions",
+    siteName: "Conner Digital",
     locale: "en_US",
     type: "website",
   },

@@ -79,15 +79,15 @@ export async function POST(request: Request) {
 
     await sendSiteEmail({
       to: parsed.email,
-      subject: "We received your preview interest — J&J Management Solutions",
+      subject: "We received your preview interest — Conner Digital",
       text: [
         `Hi ${parsed.name},`,
         ``,
         `Thanks for trying the site preview builder. We’ll review what you shared and follow up within one business day.`,
         ``,
-        `Prefer to talk sooner? Call us at the number on jnjmanagementsolutions.com.`,
+        `Prefer to talk sooner? Call us at the number on connerdigital.com.`,
         ``,
-        `— J&J Management Solutions`,
+        `— Conner Digital`,
       ].join("\n"),
     });
   } catch (err) {

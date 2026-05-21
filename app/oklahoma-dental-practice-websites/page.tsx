@@ -5,16 +5,16 @@ import { getSiteUrl } from "@/lib/site-url";
 const path = "/oklahoma-dental-practice-websites";
 
 export const metadata: Metadata = {
-  title: "Oklahoma dental practice websites & booking | J&J Management Solutions",
+  title: "Oklahoma dental practice websites & booking | Conner Digital",
   description:
     "Patient-friendly sites and intake for Oklahoma dental practices—trust, clarity, and smoother scheduling.",
   alternates: { canonical: path },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Oklahoma dental practice websites & booking | J&J Management Solutions",
+    title: "Oklahoma dental practice websites & booking | Conner Digital",
     description: "Websites and booking flows for Oklahoma dental and medical practices.",
     url: `${getSiteUrl()}${path}`,
-    siteName: "J&J Management Solutions",
+    siteName: "Conner Digital",
     locale: "en_US",
     type: "website",
   },

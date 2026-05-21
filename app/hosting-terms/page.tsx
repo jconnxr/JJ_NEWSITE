@@ -8,15 +8,15 @@ import { getSiteUrl } from "@/lib/site-url";
 const path = "/hosting-terms";
 
 export const metadata: Metadata = {
-  title: "Hosting & care plan terms | J&J Management Solutions",
+  title: "Hosting & care plan terms | Conner Digital",
   description:
     "What our optional hosting subscription covers, what you should expect, and how to get support—Oklahoma small businesses.",
   alternates: { canonical: path },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Hosting & care plan terms | J&J Management Solutions",
+    title: "Hosting & care plan terms | Conner Digital",
     url: `${getSiteUrl()}${path}`,
-    siteName: "J&J Management Solutions",
+    siteName: "Conner Digital",
     locale: "en_US",
     type: "website",
   },

@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="border-t border-[var(--color-border)] bg-[var(--color-cream)] py-10 pb-[max(2.5rem,env(safe-area-inset-bottom,0px))] text-center text-sm text-[var(--color-muted)]">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <p className="font-medium text-[var(--color-ink)]">
-          <strong>J&J Management Solutions</strong> · Oklahoma
+          <strong>Conner Digital</strong> · Oklahoma
         </p>
         <nav className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs font-semibold sm:text-sm">
           <Link href="/preview" className="text-[var(--color-accent)] hover:underline">
@@ -44,7 +44,7 @@ export function Footer() {
             Text us
           </a>
         </p>
-        <p className="mt-1">© {year} J&J Management Solutions. All rights reserved.</p>
+        <p className="mt-1">© {year} Conner Digital. All rights reserved.</p>
         <p className="mx-auto mt-4 max-w-2xl text-xs leading-relaxed sm:text-sm">
           <span className="font-semibold text-[var(--color-ink)]">Service areas: </span>
           {SERVICE_AREA_CITIES.join(" · ")}.

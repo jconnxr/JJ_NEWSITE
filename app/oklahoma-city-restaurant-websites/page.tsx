@@ -5,16 +5,16 @@ import { getSiteUrl } from "@/lib/site-url";
 const path = "/oklahoma-city-restaurant-websites";
 
 export const metadata: Metadata = {
-  title: "Oklahoma City restaurant websites | J&J Management Solutions",
+  title: "Oklahoma City restaurant websites | Conner Digital",
   description:
     "Fast, mobile-first sites for OKC restaurants—menus, reservations, and local SEO so diners find you first.",
   alternates: { canonical: path },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Oklahoma City restaurant websites | J&J Management Solutions",
+    title: "Oklahoma City restaurant websites | Conner Digital",
     description: "Web design and systems for Oklahoma City restaurants and hospitality.",
     url: `${getSiteUrl()}${path}`,
-    siteName: "J&J Management Solutions",
+    siteName: "Conner Digital",
     locale: "en_US",
     type: "website",
   },

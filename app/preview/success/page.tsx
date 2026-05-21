@@ -10,14 +10,14 @@ import { getSiteUrl } from "@/lib/site-url";
 const path = "/preview/success";
 
 export const metadata: Metadata = {
-  title: "Thank you | J&J Management Solutions",
+  title: "Thank you | Conner Digital",
   description: "Thanks for reaching out—we’ll follow up with next steps.",
   alternates: { canonical: path },
   robots: { index: false, follow: false },
   openGraph: {
-    title: "Thank you | J&J Management Solutions",
+    title: "Thank you | Conner Digital",
     url: `${getSiteUrl()}${path}`,
-    siteName: "J&J Management Solutions",
+    siteName: "Conner Digital",
     locale: "en_US",
     type: "website",
   },
